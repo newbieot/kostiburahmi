@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kost Ibu Rahmi - Hunian Putri Muslimah Anduring</title>
 
-    <link rel="preload" as="image" href="1-tampak-depan-thumb.webp">
+    <link rel="preload" as="image" href="thumbnail-1-tampak-depan.webp">
 
     <meta property="og:title" content="Kost Ibu Rahmi - Hunian Putri Muslimah Anduring" />
     <meta property="og:description" content="Kost putri nyaman, luas 4x4m, Free Wi-Fi, dan strategis di Anduring. Sisa 3 kamar kosong! Klik untuk lihat foto dan fasilitas." />
-    <meta property="og:image" content="https://kostiburahmi.pages.dev/1-tampak-depan-thumb.webp" />
+    <meta property="og:image" content="https://kostiburahmi.pages.dev/thumbnail-1-tampak-depan.webp" />
     <meta property="og:url" content="https://kostiburahmi.pages.dev/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -104,7 +104,6 @@
             display: block;
         }
         
-        /* Efek Hover */
         .gallery-item::after {
             content: '🔍 Klik untuk perbesar';
             position: absolute;
@@ -161,8 +160,10 @@
             font-size: 40px;
             font-weight: bold;
             cursor: pointer;
+            transition: 0.3s;
             z-index: 10000;
         }
+        .close:hover { color: var(--primary-color); }
 
         .section {
             background: white;
@@ -205,11 +206,13 @@
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
             transition: 0.3s;
         }
+        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5); }
 
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .hero { height: 250px; }
             th, td { padding: 10px; font-size: 0.85rem; }
+            .modal-content { max-width: 95%; max-height: 80vh; }
         }
     </style>
 </head>
@@ -224,7 +227,7 @@
 
 <div class="container">
     <div class="hero">
-        <img src="1-tampak-depan-thumb.webp" alt="Tampak Depan Kost Ibu Rahmi">
+        <img src="thumbnail-1-tampak-depan.webp" alt="Tampak Depan Kost Ibu Rahmi">
     </div>
 
     <div class="section">
@@ -241,28 +244,33 @@
     <h2>Galeri Foto Kamar & Fasilitas</h2>
     <div class="gallery">
         <div class="gallery-item" onclick="openModal('1-tampak-depan.webp')">
-            <img src="1-tampak-depan-thumb.webp" alt="Tampak Depan" loading="lazy">
+            <img src="thumbnail-1-tampak-depan.webp" alt="Tampak Depan" loading="lazy">
             <p>Tampak Depan</p>
         </div>
-        <div class="gallery-item" onclick="openModal('2-kamar-bawah-1.webp')">
-            <img src="2-kamar-bawah-1-thumb.webp" alt="Kamar Lantai 1" loading="lazy">
+
+        <div class="gallery-item" onclick="openModal('kamar.webp')">
+            <img src="thumbnail-kamar.webp" alt="Kamar Kost Lantai 1" loading="lazy">
             <p>Kamar Lantai 1</p>
         </div>
-        <div class="gallery-item" onclick="openModal('3-kamar-bawah-2.webp')">
-            <img src="3-kamar-bawah-2-thumb.webp" alt="Fasilitas Kamar" loading="lazy">
-            <p>Detail Kamar Bawah</p>
-        </div>
-        <div class="gallery-item" onclick="openModal('4-kamar-atas-1.webp')">
-            <img src="4-kamar-atas-1-thumb.webp" alt="Kamar Lantai 2" loading="lazy">
+
+        <div class="gallery-item" onclick="openModal('kamar-lantai-2.webp')">
+            <img src="thumbnail-kamar-lantai-2.webp" alt="Kamar Kost Lantai 2" loading="lazy">
             <p>Kamar Lantai 2</p>
         </div>
-        <div class="gallery-item" onclick="openModal('5-kamar-atas-2.webp')">
-            <img src="5-kamar-atas-2-thumb.webp" alt="Fasilitas Atas" loading="lazy">
-            <p>Detail Kamar Atas</p>
+
+        <div class="gallery-item" onclick="openModal('lantai-1-lobi.webp')">
+            <img src="thumbnail-lantai-1-lobi.webp" alt="Lobi Lantai 1" loading="lazy">
+            <p>Lobi Lantai 1</p>
         </div>
-        <div class="gallery-item" onclick="openModal('6-kamar-mandi.webp')">
-            <img src="6-kamar-mandi-thumb.webp" alt="Kamar Mandi" loading="lazy">
-            <p>Kamar Mandi</p>
+
+        <div class="gallery-item" onclick="openModal('dapur.webp')">
+            <img src="thumbnail-dapur.webp" alt="Dapur Bersama" loading="lazy">
+            <p>Fasilitas Dapur</p>
+        </div>
+
+        <div class="gallery-item" onclick="openModal('balkon-lantai-2.webp')">
+            <img src="thumbnail-balkon-lantai-2.webp" alt="Area Balkon" loading="lazy">
+            <p>Area Balkon Lantai 2</p>
         </div>
     </div>
 
@@ -294,12 +302,17 @@
                 </tr>
             </tbody>
         </table>
+        <p style="margin-top: 15px; font-size: 0.85rem; color: #666;">
+            * Lantai Bawah: Listrik pascabayar (sudah termasuk lampu & kipas).<br>
+            * Lantai Atas: Listrik prabayar (token).<br>
+            * <strong>Sekamar Berdua?</strong> Cukup tambah biaya Rp 200.000/bulan saja.
+        </p>
     </div>
 
     <div class="section">
         <h2>Lokasi & Kontak</h2>
         <p><strong>Alamat:</strong> Jl. M. Hatta, Anduring, Gang Sakinah No. 59</p>
-        <p style="margin-bottom: 15px;"><a href="https://maps.app.goo.gl/T4S5Yv9Vq8W7Xn7A6" target="_blank" style="color: var(--primary-color); font-weight: bold;">Lihat di Google Maps »</a></p>
+        <p style="margin-bottom: 15px;"><a href="https://maps.app.goo.gl/vA8T6vLh8E1J8LzF8" target="_blank" style="color: var(--primary-color); font-weight: bold;">Lihat di Google Maps »</a></p>
         <p><strong>Pemilik:</strong> Ibu Rahmi (0852-6290-4213)</p>
     </div>
 
@@ -315,7 +328,7 @@
 </div>
 
 <div id="imageModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">&times;</span>
+  <span class="close" onclick="closeModal()">×</span>
   <img class="modal-content" id="img01">
 </div>
 
