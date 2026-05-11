@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kost Ibu Rahmi - Hunian Putri Muslimah Anduring</title>
 
+    <link rel="preload" as="image" href="1-tampak-depan.webp">
+
     <meta property="og:title" content="Kost Ibu Rahmi - Hunian Putri Muslimah Anduring" />
     <meta property="og:description" content="Kost putri nyaman, luas 4x4m, Free Wi-Fi, dan strategis di Anduring. Sisa 3 kamar kosong! Klik untuk lihat foto dan fasilitas." />
-    <meta property="og:image" content="https://github.com/newbieot/kostiburahmi/blob/main/tampak%20depan%20baru.jpeg?raw=true" />
+    <meta property="og:image" content="https://kostiburahmi.pages.dev/1-tampak-depan.webp" />
     <meta property="og:url" content="https://kostiburahmi.pages.dev/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BN88F83K4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-8BN88F83K4');
     </script>
 
@@ -102,7 +104,7 @@
             display: block;
         }
         
-        /* Efek Hover untuk UI/UX yang sudah diperbaiki */
+        /* Efek Hover untuk UI/UX */
         .gallery-item::after {
             content: '🔍 Klik untuk perbesar';
             position: absolute;
@@ -118,7 +120,7 @@
             font-weight: bold;
             opacity: 0;
             transition: 0.3s;
-            pointer-events: none; /* Ini kuncinya agar klik bisa tembus ke gambar */
+            pointer-events: none;
         }
         
         .gallery-item:hover::after { opacity: 1; }
@@ -226,7 +228,7 @@
 
 <div class="container">
     <div class="hero">
-        <img src="https://github.com/newbieot/kostiburahmi/blob/main/tampak%20depan%20baru.jpeg?raw=true" alt="Tampak Depan Kost Ibu Rahmi">
+        <img src="1-tampak-depan.webp" alt="Tampak Depan Kost Ibu Rahmi">
     </div>
 
     <div class="section">
@@ -242,28 +244,28 @@
 
     <h2>Galeri Foto Kamar & Fasilitas</h2>
     <div class="gallery">
-        <div class="gallery-item" onclick="openModal('https://github.com/newbieot/kostiburahmi/blob/main/kamar.jpeg?raw=true')">
-            <img src="https://github.com/newbieot/kostiburahmi/blob/main/kamar.jpeg?raw=true" alt="Kamar Lantai 1">
+        <div class="gallery-item" onclick="openModal('kamar.webp')">
+            <img src="kamar.webp" alt="Kamar Lantai 1">
             <p>Kamar Lantai 1 (Luas & Nyaman)</p>
         </div>
-        <div class="gallery-item" onclick="openModal('https://github.com/newbieot/kostiburahmi/blob/main/kamar%20lantai%202.jpeg?raw=true')">
-            <img src="https://github.com/newbieot/kostiburahmi/blob/main/kamar%20lantai%202.jpeg?raw=true" alt="Kamar Lantai 2">
+        <div class="gallery-item" onclick="openModal('kamar-lantai-2.webp')">
+            <img src="kamar-lantai-2.webp" alt="Kamar Lantai 2">
             <p>Kamar Lantai 2</p>
         </div>
-        <div class="gallery-item" onclick="openModal('https://github.com/newbieot/kostiburahmi/blob/main/lantai%201%20lobi.jpeg?raw=true')">
-            <img src="https://github.com/newbieot/kostiburahmi/blob/main/lantai%201%20lobi.jpeg?raw=true" alt="Lobi Lantai 1">
+        <div class="gallery-item" onclick="openModal('lantai-1-lobi.webp')">
+            <img src="lantai-1-lobi.webp" alt="Lobi Lantai 1">
             <p>Lobi Lantai 1</p>
         </div>
-        <div class="gallery-item" onclick="openModal('https://github.com/newbieot/kostiburahmi/blob/main/dapur.jpeg?raw=true')">
-            <img src="https://github.com/newbieot/kostiburahmi/blob/main/dapur.jpeg?raw=true" alt="Dapur Bersama">
+        <div class="gallery-item" onclick="openModal('dapur.webp')">
+            <img src="dapur.webp" alt="Dapur Bersama">
             <p>Fasilitas Dapur Bersama</p>
         </div>
-        <div class="gallery-item" onclick="openModal('https://github.com/newbieot/kostiburahmi/blob/main/toilet%20di%20dekat%20dapur.jpeg?raw=true')">
-            <img src="https://github.com/newbieot/kostiburahmi/blob/main/toilet%20di%20dekat%20dapur.jpeg?raw=true" alt="Kamar Mandi">
-            <p>Kamar Mandi Bersih</p>
+        <div class="gallery-item" onclick="openModal('lantai-1.webp')">
+            <img src="lantai-1.webp" alt="Area Lantai 1">
+            <p>Area/Fasilitas Lantai 1</p>
         </div>
-        <div class="gallery-item" onclick="openModal('https://github.com/newbieot/kostiburahmi/blob/main/lantai%202.jpeg?raw=true')">
-            <img src="https://github.com/newbieot/kostiburahmi/blob/main/lantai%202.jpeg?raw=true" alt="Area Lantai 2">
+        <div class="gallery-item" onclick="openModal('balkon-lantai-2.webp')">
+            <img src="balkon-lantai-2.webp" alt="Area Lantai 2">
             <p>Area Balkon/Lantai 2</p>
         </div>
     </div>
@@ -330,7 +332,7 @@
     var modal = document.getElementById("imageModal");
     var modalImg = document.getElementById("img01");
 
-    // Fungsi untuk membuka foto (sudah dimodifikasi menerima URL langsung)
+    // Fungsi untuk membuka foto
     function openModal(imageSrc) {
         modal.style.display = "flex"; 
         modal.style.justifyContent = "center";
