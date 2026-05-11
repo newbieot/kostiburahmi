@@ -163,7 +163,6 @@
             transition: 0.3s;
             z-index: 10000;
         }
-        .close:hover { color: var(--primary-color); }
 
         .section {
             background: white;
@@ -206,13 +205,11 @@
             box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
             transition: 0.3s;
         }
-        .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5); }
 
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .hero { height: 250px; }
             th, td { padding: 10px; font-size: 0.85rem; }
-            .modal-content { max-width: 95%; max-height: 80vh; }
         }
     </style>
 </head>
@@ -227,7 +224,7 @@
 
 <div class="container">
     <div class="hero">
-        <img src="thumbnail-1-tampak-depan.webp" alt="Tampak Depan Kost Ibu Rahmi">
+        <img src="thumbnail-1-tampak-depan.webp" alt="Tampak Depan Kost Ibu Rahmi" loading="eager">
     </div>
 
     <div class="section">
@@ -236,15 +233,15 @@
             <li>Ukuran Kamar Luas (4 x 4 meter)</li>
             <li><strong>FREE Wi-Fi 24 Jam</strong></li>
             <li>Gratis Biaya Air (Ditanggung Pemilik)</li>
-            <li>Area Parkir Motor Aman (Langsung di depan kamar)</li>
-            <li>Lingkungan tenang, cocok untuk mahasiswi/karyawati</li>
+            <li>Area Parkir Motor Aman</li>
+            <li>Lingkungan tenang, dekat kampus</li>
         </ul>
     </div>
 
     <h2>Galeri Foto Kamar & Fasilitas</h2>
     <div class="gallery">
         <div class="gallery-item" onclick="openModal('1-tampak-depan.webp')">
-            <img src="thumbnail-1-tampak-depan.webp" alt="Tampak Depan" loading="lazy">
+            <img src="thumbnail-1-tampak-depan.webp" alt="Tampak Depan" loading="eager">
             <p>Tampak Depan</p>
         </div>
 
@@ -280,14 +277,14 @@
             <thead>
                 <tr>
                     <th>Lantai</th>
-                    <th>Tipe/Fasilitas</th>
+                    <th>Fasilitas</th>
                     <th>Harga/Bulan</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td><strong>Lantai Bawah</strong></td>
-                    <td>Kamar Lengkap (Kasur, Kipas, Lemari)</td>
+                    <td>Kamar Lengkap (Kasur, Lemari)</td>
                     <td class="price">Rp 700.000</td>
                 </tr>
                 <tr>
@@ -297,22 +294,17 @@
                 </tr>
                 <tr>
                     <td><strong>Lantai Atas</strong></td>
-                    <td>Kamar Mandi Dalam (Kosongan)</td>
+                    <td>Kamar Mandi Dalam</td>
                     <td class="price">Rp 700.000</td>
                 </tr>
             </tbody>
         </table>
-        <p style="margin-top: 15px; font-size: 0.85rem; color: #666;">
-            * Lantai Bawah: Listrik pascabayar (sudah termasuk lampu & kipas).<br>
-            * Lantai Atas: Listrik prabayar (token).<br>
-            * <strong>Sekamar Berdua?</strong> Cukup tambah biaya Rp 200.000/bulan saja.
-        </p>
     </div>
 
     <div class="section">
         <h2>Lokasi & Kontak</h2>
         <p><strong>Alamat:</strong> Jl. M. Hatta, Anduring, Gang Sakinah No. 59</p>
-        <p style="margin-bottom: 15px;"><a href="https://maps.app.goo.gl/vA8T6vLh8E1J8LzF8" target="_blank" style="color: var(--primary-color); font-weight: bold;">Lihat di Google Maps »</a></p>
+        <p style="margin-bottom: 15px;"><a href="https://maps.app.goo.gl/uXvE1H6V5x5u6mY27" target="_blank" style="color: var(--primary-color); font-weight: bold;">Lihat di Google Maps »</a></p>
         <p><strong>Pemilik:</strong> Ibu Rahmi (0852-6290-4213)</p>
     </div>
 
