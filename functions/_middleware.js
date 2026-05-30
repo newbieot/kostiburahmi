@@ -2,10 +2,10 @@ export async function onRequest(context) {
   const url = new URL(context.request.url);
   
   // Jika pengunjung menggunakan link lama (.pages.dev)
-  if (url.hostname === "newbieot.pages.dev") {
+  if (url.hostname === "kostiburahmi.pages.dev") {
     
     // Paksa ganti domainnya ke posnew.com
-    url.hostname = "posnew.com"; 
+    url.hostname = "kost.posnew.com"; 
     
     // Lakukan redirect permanen (301)
     return Response.redirect(url.toString(), 301); 
