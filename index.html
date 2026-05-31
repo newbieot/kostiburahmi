@@ -48,42 +48,37 @@
         }
 
         .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; }
-        /* Memangkas padding kontainer utama */
         .container { width: 100%; max-width: 900px; padding: 0 20px; }
 
-        /* HEADER BOX MINIMALIS (Pink Gelap) - Margin atas dipangkas */
-        header {
-            width: 100%;
-            text-align: center;
-            padding: 20px 20px 0 20px;
-        }
+        /* HEADER BOX MINIMALIS (Pink Gelap) - Lebar disamakan dengan konten */
         .header-box {
+            text-align: center;
             background-color: var(--primary-dark);
             color: var(--white);
-            max-width: 600px; 
-            margin: 0 auto;
-            padding: 20px 20px;
-            border-radius: 20px;
+            width: 100%;
+            margin: 20px 0;
+            padding: 30px 20px;
+            border-radius: var(--radius);
             box-shadow: 0 8px 20px rgba(136, 14, 79, 0.15);
         }
         .header-box h1 { 
-            font-size: 2rem; 
+            font-size: 2.2rem; 
             font-weight: 800; 
             letter-spacing: 0.5px; 
             margin-bottom: 5px; 
             color: var(--white);
         }
         .header-box p { 
-            font-size: 0.95rem; 
+            font-size: 1.05rem; 
             color: var(--secondary); 
             font-weight: 500; 
             margin-bottom: 0;
         }
         .header-divider {
-            width: 50px;
-            height: 3px;
+            width: 60px;
+            height: 4px;
             background-color: var(--secondary);
-            margin: 12px auto 0;
+            margin: 15px auto 0;
             border-radius: 2px;
             opacity: 0.8;
         }
@@ -111,11 +106,11 @@
             width: 100%;
         }
 
-        /* Hero Image - Margin disesuaikan */
-        .hero { width: 100%; height: 350px; border-radius: var(--radius); overflow: hidden; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
+        /* Hero Image */
+        .hero { width: 100%; height: 350px; border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
         .hero img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Video Section - Padding & Margin dirapikan */
+        /* Video Section */
         .video-wrapper {
             background: var(--text-dark);
             border-radius: var(--radius);
@@ -168,7 +163,7 @@
         .modal-content { max-width: 90%; max-height: 85vh; border-radius: 8px; }
         .close { position: absolute; top: 15px; right: 25px; color: white; font-size: 35px; cursor: pointer; }
 
-        /* Tombol & Link - Memangkas margin bawah yang kosong */
+        /* Tombol & Link */
         .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #25d366; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25); border: 2px solid #fff; transition: transform 0.2s; }
         .btn-wa:hover { transform: translateY(-2px); }
         .map-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; margin-top: 10px; background: var(--secondary); color: var(--primary-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; border-radius: 8px; transition: 0.3s; }
@@ -177,7 +172,7 @@
         .cta-container {
             text-align: center;
             width: 100%;
-            margin: 10px 0 30px 0; /* Margin dipangkas agar tidak menganga di atas footer */
+            margin: 10px 0 30px 0; 
         }
 
         /* FOOTER ONE-LINE (GELAP) */
@@ -222,24 +217,26 @@
             .dashboard-footer { flex-direction: column; justify-content: center; gap: 8px; padding: 15px; height: auto; }
             .footer-desc { display: none; }
             .hero { height: 200px; margin: 15px 0; }
-            .header-box { padding: 15px 15px; border-radius: 16px; }
-            .header-box h1 { font-size: 1.6rem; }
-            .header-box p { font-size: 0.85rem; }
+            .header-box h1 { font-size: 1.8rem; }
+            .header-box p { font-size: 0.95rem; }
+            /* Optimasi Ukuran Tabel di Layar Kecil */
+            th, td { padding: 10px 5px; font-size: 0.85rem; }
+            .price { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
 
 <div class="main-content">
-    <header>
-        <div class="header-box">
+    <div class="container">
+        
+        <!-- HEADER BERSATU DALAM CONTAINER -->
+        <header class="header-box">
             <h1>KOST IBU RAHMI</h1>
             <p>Hunian Putri Khusus Muslimah • Bersih, Nyaman & Strategis</p>
             <div class="header-divider"></div>
-        </div>
-    </header>
+        </header>
 
-    <div class="container">
         <!-- Hero Image -->
         <div class="hero"><img src="1-tampak-depan.webp" alt="Tampak Depan" loading="eager"></div>
 
@@ -294,20 +291,19 @@
         <div class="card">
             <h2><i data-lucide="map-pinned" style="color: var(--primary); width: 20px; height: 20px;"></i> Lokasi & Kontak Pemilik</h2>
             <p style="margin-bottom: 5px; color: var(--text-dark); font-size: 0.95rem;"><strong>Alamat:</strong> Jl. M. Hatta, Anduring, Gang Sakinah No. 59</p>
-            <p style="margin-bottom: 5px; color: var(--text-dark); font-size: 0.95rem;"><strong>Pengelola:</strong> Ibu Rahmi</p>
+            <p style="margin-bottom: 10px; color: var(--text-dark); font-size: 0.95rem;"><strong>Pengelola:</strong> Ibu Rahmi</p>
             
             <a href="https://maps.app.goo.gl/Gx7gHEeugVkciWht6" target="_blank" class="map-link">
                 <i data-lucide="map" style="width: 16px; height: 16px;"></i> Buka di Google Maps
             </a>
         </div>
-    </div>
-
-    <!-- Tombol WhatsApp yang merapat ke footer -->
-    <div class="cta-container">
-        <a href="https://wa.me/6285262904213?text=Halo%20Ibu%20Rahmi,%20saya%20lihat%20website%20kost%20dan%20tertarik%20tanya-tanya%20kamar." class="btn-wa">
-            <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
-            Chat WhatsApp: 0852-6290-4213
-        </a>
+        
+        <div class="cta-container">
+            <a href="https://wa.me/6285262904213?text=Halo%20Ibu%20Rahmi,%20saya%20lihat%20website%20kost%20dan%20tertarik%20tanya-tanya%20kamar." class="btn-wa">
+                <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+                Chat WhatsApp: 0852-6290-4213
+            </a>
+        </div>
     </div>
 </div>
 
