@@ -47,128 +47,138 @@
             min-height: 100vh;
         }
 
-        .main-content { flex: 1; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; }
+        /* Memangkas padding kontainer utama */
+        .container { width: 100%; max-width: 900px; padding: 0 20px; }
 
-        /* HEADER BOX MINIMALIS (Pink Gelap) */
+        /* HEADER BOX MINIMALIS (Pink Gelap) - Margin atas dipangkas */
         header {
+            width: 100%;
             text-align: center;
-            padding: 20px 20px 10px 20px;
-            margin-bottom: 10px;
+            padding: 20px 20px 0 20px;
         }
         .header-box {
             background-color: var(--primary-dark);
             color: var(--white);
-            max-width: 600px; /* Ukuran minimalis, tidak membentang penuh */
+            max-width: 600px; 
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 20px 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(136, 14, 79, 0.2);
+            box-shadow: 0 8px 20px rgba(136, 14, 79, 0.15);
         }
         .header-box h1 { 
-            font-size: 2.2rem; 
+            font-size: 2rem; 
             font-weight: 800; 
             letter-spacing: 0.5px; 
-            margin-bottom: 8px; 
+            margin-bottom: 5px; 
             color: var(--white);
         }
         .header-box p { 
-            font-size: 1.05rem; 
+            font-size: 0.95rem; 
             color: var(--secondary); 
             font-weight: 500; 
+            margin-bottom: 0;
         }
         .header-divider {
-            width: 60px;
-            height: 4px;
+            width: 50px;
+            height: 3px;
             background-color: var(--secondary);
-            margin: 15px auto 0;
+            margin: 12px auto 0;
             border-radius: 2px;
             opacity: 0.8;
         }
 
         h2 { 
             color: var(--primary-dark); 
-            font-size: 1.5rem;
-            margin: 35px 0 20px; 
+            font-size: 1.3rem;
+            margin: 0 0 15px 0; 
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
         h2::before {
-            content: ''; display: inline-block; width: 6px; height: 24px;
+            content: ''; display: inline-block; width: 5px; height: 20px;
             background-color: var(--primary); border-radius: 4px;
         }
 
         .card {
             background: var(--white);
-            padding: 25px;
+            padding: 20px;
             border-radius: var(--radius);
-            margin-bottom: 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.03);
-            border: 1px solid rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+            width: 100%;
         }
 
-        /* Hero Image */
-        .hero { width: 100%; height: 400px; border-radius: var(--radius); overflow: hidden; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        /* Hero Image - Margin disesuaikan */
+        .hero { width: 100%; height: 350px; border-radius: var(--radius); overflow: hidden; margin: 20px 0; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
         .hero img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* Video Section */
+        /* Video Section - Padding & Margin dirapikan */
         .video-wrapper {
             background: var(--text-dark);
             border-radius: var(--radius);
-            padding: 25px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            margin-bottom: 20px;
+            width: 100%;
         }
         .video-wrapper h3 { 
             color: white; 
-            margin-bottom: 15px; 
+            margin: 0 0 15px 0; 
             font-weight: 600; 
             display: flex; 
             align-items: center; 
-            gap: 8px; 
+            gap: 8px;
+            font-size: 1.1rem;
         }
         .video-container {
             width: 100%; 
-            max-width: 320px; /* Lebar pas untuk portrait */
+            max-width: 300px; 
             border-radius: 12px; 
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
             background: #000;
         }
         video { width: 100%; display: block; }
 
         /* Gallery */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
-        .gallery-item { border-radius: 12px; overflow: hidden; background: #fff; cursor: pointer; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.4s ease; display: block; }
-        .gallery-item.portrait img { height: 350px; }
-        .gallery-item:hover img { transform: scale(1.08); }
-        .gallery-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; text-align: center; font-size: 0.9rem; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+        .gallery-item { border-radius: 12px; overflow: hidden; background: #fff; cursor: pointer; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.04); }
+        .gallery-item img { width: 100%; height: 200px; object-fit: cover; transition: transform 0.4s ease; display: block; }
+        .gallery-item.portrait img { height: 300px; }
+        .gallery-item:hover img { transform: scale(1.05); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 8px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; text-align: center; font-size: 0.85rem; }
 
         ul.features { list-style: none; }
-        ul.features li { margin-bottom: 12px; padding-left: 32px; position: relative; font-size: 1.05rem; font-weight: 500; }
-        ul.features li::before { content: '✓'; position: absolute; left: 0; top: 2px; background: var(--secondary); color: var(--primary-dark); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
+        ul.features li { margin-bottom: 8px; padding-left: 28px; position: relative; font-size: 0.95rem; font-weight: 500; }
+        ul.features li::before { content: '✓'; position: absolute; left: 0; top: 3px; background: var(--secondary); color: var(--primary-dark); width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; }
 
-        /* TABEL HARGA - Sempurna untuk Mobile */
+        /* TABEL HARGA */
         .table-responsive { width: 100%; overflow: hidden; }
         table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 14px 10px; text-align: left; border-bottom: 1px solid #f1f5f9; font-size: 0.95rem; line-height: 1.4; }
+        th, td { padding: 12px 8px; text-align: left; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; line-height: 1.3; }
         th { background-color: var(--secondary); color: var(--primary-dark); font-weight: 600; }
-        .price { font-weight: bold; color: var(--primary); font-size: 1.05rem; white-space: nowrap; }
+        .price { font-weight: bold; color: var(--primary); font-size: 1rem; white-space: nowrap; }
 
         .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); justify-content: center; align-items: center;}
         .modal-content { max-width: 90%; max-height: 85vh; border-radius: 8px; }
-        .close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
+        .close { position: absolute; top: 15px; right: 25px; color: white; font-size: 35px; cursor: pointer; }
 
-        /* Tombol & Link */
-        .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #25d366; color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.05rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); border: 2px solid #fff; transition: transform 0.2s; }
-        .btn-wa:hover { transform: translateY(-3px); }
-        .map-link { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; margin-top: 15px; background: var(--secondary); color: var(--primary-dark); text-decoration: none; font-weight: 600; border-radius: 8px; transition: 0.3s; }
+        /* Tombol & Link - Memangkas margin bawah yang kosong */
+        .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #25d366; color: white; padding: 14px 28px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1rem; box-shadow: 0 8px 20px rgba(37, 211, 102, 0.25); border: 2px solid #fff; transition: transform 0.2s; }
+        .btn-wa:hover { transform: translateY(-2px); }
+        .map-link { display: inline-flex; align-items: center; gap: 6px; padding: 10px 16px; margin-top: 10px; background: var(--secondary); color: var(--primary-dark); text-decoration: none; font-weight: 600; font-size: 0.9rem; border-radius: 8px; transition: 0.3s; }
         .map-link:hover { background: var(--primary); color: white; }
+
+        .cta-container {
+            text-align: center;
+            width: 100%;
+            margin: 10px 0 30px 0; /* Margin dipangkas agar tidak menganga di atas footer */
+        }
 
         /* FOOTER ONE-LINE (GELAP) */
         .dashboard-footer {
@@ -211,11 +221,10 @@
         @media (max-width: 850px) {
             .dashboard-footer { flex-direction: column; justify-content: center; gap: 8px; padding: 15px; height: auto; }
             .footer-desc { display: none; }
-            .hero { height: 220px; }
-            .header-box { padding: 25px 15px; }
-            /* Optimasi Ukuran Tabel di Layar Kecil */
-            th, td { padding: 10px 5px; font-size: 0.85rem; }
-            .price { font-size: 0.9rem; }
+            .hero { height: 200px; margin: 15px 0; }
+            .header-box { padding: 15px 15px; border-radius: 16px; }
+            .header-box h1 { font-size: 1.6rem; }
+            .header-box p { font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -223,12 +232,10 @@
 
 <div class="main-content">
     <header>
-        <div class="container">
-            <div class="header-box">
-                <h1>KOST IBU RAHMI</h1>
-                <p>Hunian Putri Khusus Muslimah • Bersih, Nyaman & Strategis</p>
-                <div class="header-divider"></div>
-            </div>
+        <div class="header-box">
+            <h1>KOST IBU RAHMI</h1>
+            <p>Hunian Putri Khusus Muslimah • Bersih, Nyaman & Strategis</p>
+            <div class="header-divider"></div>
         </div>
     </header>
 
@@ -238,9 +245,8 @@
 
         <!-- Virtual Tour Video Portrait -->
         <div class="video-wrapper">
-            <h3><i data-lucide="play-circle" style="color: #f48fb1;"></i> Intip Kondisi Dalam Kost (Lobi)</h3>
+            <h3><i data-lucide="play-circle" style="color: #f48fb1; width: 20px; height: 20px;"></i> Intip Kondisi Dalam Kost</h3>
             <div class="video-container">
-                <!-- Mengambil video langsung dari raw github -->
                 <video controls preload="metadata" poster="1-tampak-depan.webp">
                     <source src="https://raw.githubusercontent.com/newbieot/kostiburahmi/main/video-portrait.mp4" type="video/mp4">
                     Maaf, browser Anda tidak mendukung pemutar video.
@@ -250,7 +256,7 @@
 
         <!-- Fasilitas -->
         <div class="card">
-            <h2><i data-lucide="sparkles" style="color: var(--primary);"></i> Fasilitas & Keunggulan</h2>
+            <h2><i data-lucide="sparkles" style="color: var(--primary); width: 20px; height: 20px;"></i> Fasilitas & Keunggulan</h2>
             <ul class="features">
                 <li>Kamar Sangat Luas (Ukuran 4 x 4 meter)</li>
                 <li><strong>FREE Akses Wi-Fi 24 Jam</strong></li>
@@ -260,16 +266,18 @@
         </div>
 
         <!-- Galeri -->
-        <h2><i data-lucide="image" style="color: var(--primary);"></i> Galeri Foto Ruangan</h2>
-        <div class="gallery">
-            <div class="gallery-item" onclick="openModal('kamar-baru.jpeg')"><img src="kamar-baru.jpeg" alt="Kamar"><div class="gallery-caption">Kamar Tidur (4x4m)</div></div>
-            <div class="gallery-item" onclick="openModal('lobi-baru.jpeg')"><img src="lobi-baru.jpeg" alt="Lobi"><div class="gallery-caption">Lobi Ruang Bersama</div></div>
-            <div class="gallery-item portrait" onclick="openModal('dapur-baru.jpeg')"><img src="dapur-baru.jpeg" alt="Dapur"><div class="gallery-caption">Dapur Bersama</div></div>
+        <div class="card">
+            <h2><i data-lucide="image" style="color: var(--primary); width: 20px; height: 20px;"></i> Galeri Foto Ruangan</h2>
+            <div class="gallery">
+                <div class="gallery-item" onclick="openModal('kamar-baru.jpeg')"><img src="kamar-baru.jpeg" alt="Kamar"><div class="gallery-caption">Kamar Tidur (4x4m)</div></div>
+                <div class="gallery-item" onclick="openModal('lobi-baru.jpeg')"><img src="lobi-baru.jpeg" alt="Lobi"><div class="gallery-caption">Lobi Ruang Bersama</div></div>
+                <div class="gallery-item portrait" onclick="openModal('dapur-baru.jpeg')"><img src="dapur-baru.jpeg" alt="Dapur"><div class="gallery-caption">Dapur Bersama</div></div>
+            </div>
         </div>
 
         <!-- Tabel Harga -->
-        <div class="card" style="margin-top: 30px;">
-            <h2><i data-lucide="receipt" style="color: var(--primary);"></i> Daftar Harga</h2>
+        <div class="card">
+            <h2><i data-lucide="receipt" style="color: var(--primary); width: 20px; height: 20px;"></i> Daftar Harga</h2>
             <div class="table-responsive">
                 <table>
                     <thead><tr><th>Posisi</th><th>Kondisi</th><th>Harga/Bulan</th></tr></thead>
@@ -284,21 +292,22 @@
 
         <!-- Lokasi & Kontak -->
         <div class="card">
-            <h2><i data-lucide="map-pinned" style="color: var(--primary);"></i> Lokasi & Kontak Pemilik</h2>
-            <p style="margin-bottom: 5px; color: var(--text-dark);"><strong>Alamat:</strong> Jl. M. Hatta, Anduring, Gang Sakinah No. 59</p>
-            <p style="margin-bottom: 10px; color: var(--text-dark);"><strong>Pengelola:</strong> Ibu Rahmi</p>
+            <h2><i data-lucide="map-pinned" style="color: var(--primary); width: 20px; height: 20px;"></i> Lokasi & Kontak Pemilik</h2>
+            <p style="margin-bottom: 5px; color: var(--text-dark); font-size: 0.95rem;"><strong>Alamat:</strong> Jl. M. Hatta, Anduring, Gang Sakinah No. 59</p>
+            <p style="margin-bottom: 5px; color: var(--text-dark); font-size: 0.95rem;"><strong>Pengelola:</strong> Ibu Rahmi</p>
             
             <a href="https://maps.app.goo.gl/Gx7gHEeugVkciWht6" target="_blank" class="map-link">
-                <i data-lucide="map" style="width: 18px; height: 18px;"></i> Buka di Google Maps
+                <i data-lucide="map" style="width: 16px; height: 16px;"></i> Buka di Google Maps
             </a>
         </div>
+    </div>
 
-        <div style="text-align: center; margin: 40px 0;">
-            <a href="https://wa.me/6285262904213?text=Halo%20Ibu%20Rahmi,%20saya%20lihat%20website%20kost%20dan%20tertarik%20tanya-tanya%20kamar." class="btn-wa">
-                <i data-lucide="message-circle" style="width: 24px; height: 24px;"></i>
-                Chat WhatsApp: 0852-6290-4213
-            </a>
-        </div>
+    <!-- Tombol WhatsApp yang merapat ke footer -->
+    <div class="cta-container">
+        <a href="https://wa.me/6285262904213?text=Halo%20Ibu%20Rahmi,%20saya%20lihat%20website%20kost%20dan%20tertarik%20tanya-tanya%20kamar." class="btn-wa">
+            <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
+            Chat WhatsApp: 0852-6290-4213
+        </a>
     </div>
 </div>
 
