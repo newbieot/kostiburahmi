@@ -13,7 +13,6 @@
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
     
-    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8BN88F83K4"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -22,7 +21,6 @@
       gtag('config', 'G-8BN88F83K4');
     </script>
 
-    <!-- Microsoft Clarity -->
     <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -33,7 +31,6 @@
 
     <style>
         :root {
-            /* Tema Baru: Teal / Tosca Modern */
             --primary: #0d9488; 
             --primary-dark: #0f766e;
             --secondary: #ccfbf1;
@@ -51,22 +48,41 @@
             line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
+        .main-content { flex: 1; }
         .container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
-        /* Header Modern */
+        /* HEADER MINIMALIS */
         header {
             text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, var(--primary), #059669);
-            color: white;
-            border-radius: 0 0 24px 24px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 20px rgba(13, 148, 136, 0.3);
+            padding: 40px 20px 20px 20px;
+            background: transparent;
+            color: var(--text-dark);
+            margin-bottom: 20px;
         }
-        header h1 { font-size: 2.4rem; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px; }
-        header p { font-size: 1.1rem; opacity: 0.9; font-weight: 300; }
+        header h1 { 
+            font-size: 2.2rem; 
+            font-weight: 800; 
+            letter-spacing: 0.5px; 
+            margin-bottom: 8px; 
+            color: var(--primary-dark);
+        }
+        header p { 
+            font-size: 1.05rem; 
+            color: var(--text-light); 
+            font-weight: 500; 
+        }
+        .header-divider {
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
 
         h2 { 
             color: var(--primary-dark); 
@@ -90,317 +106,164 @@
             border: 1px solid rgba(0,0,0,0.05);
         }
 
-        /* Hero Image */
-        .hero {
-            width: 100%; height: 400px;
-            border-radius: var(--radius); overflow: hidden;
-            margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
+        /* Hero Image & Gallery */
+        .hero { width: 100%; height: 400px; border-radius: var(--radius); overflow: hidden; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
         .hero img { width: 100%; height: 100%; object-fit: cover; }
-
-        /* Video Section */
-        .video-wrapper {
-            background: var(--text-dark);
-            border-radius: var(--radius);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        .video-wrapper h3 { color: white; margin-bottom: 15px; font-weight: 500; }
-        .video-container {
-            width: 100%; max-width: 320px; /* Lebar pas untuk portrait */
-            border-radius: 12px; overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            background: #000;
-        }
-        video { width: 100%; display: block; }
-
-        /* Gallery Grid Masonry-style */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        .gallery-item {
-            border-radius: 12px; overflow: hidden;
-            background: #fff; cursor: pointer; position: relative;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .gallery-item img {
-            width: 100%; height: 220px; object-fit: cover;
-            transition: transform 0.4s ease; display: block;
-        }
-        .gallery-item.portrait img {
-            height: 350px; /* Lebih tinggi untuk gambar portrait seperti dapur */
-        }
-        .gallery-item::after {
-            content: '🔍 Lihat Penuh';
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(13, 148, 136, 0.8); color: white;
-            display: flex; align-items: center; justify-content: center;
-            font-weight: 600; opacity: 0; transition: opacity 0.3s ease;
-        }
-        .gallery-item:hover::after { opacity: 1; }
+        
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .gallery-item { border-radius: 12px; overflow: hidden; background: #fff; cursor: pointer; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.4s ease; display: block; }
+        .gallery-item.portrait img { height: 350px; }
         .gallery-item:hover img { transform: scale(1.08); }
-        .gallery-caption {
-            position: absolute; bottom: 0; left: 0; width: 100%;
-            padding: 10px; background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: white; text-align: center; font-size: 0.9rem; z-index: 2;
-        }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); color: white; text-align: center; font-size: 0.9rem; }
 
-        /* Lists */
         ul.features { list-style: none; }
-        ul.features li { 
-            margin-bottom: 12px; padding-left: 32px; position: relative; 
-            font-size: 1.05rem; font-weight: 500;
-        }
-        ul.features li::before {
-            content: '✓'; position: absolute; left: 0; top: 2px;
-            background: var(--secondary); color: var(--primary-dark);
-            width: 22px; height: 22px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 0.8rem; font-weight: bold;
-        }
+        ul.features li { margin-bottom: 12px; padding-left: 32px; position: relative; font-size: 1.05rem; font-weight: 500; }
+        ul.features li::before { content: '✓'; position: absolute; left: 0; top: 2px; background: var(--secondary); color: var(--primary-dark); width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
 
-        /* Table */
-        .table-responsive { overflow-x: auto; }
         table { width: 100%; border-collapse: collapse; min-width: 500px; }
         th, td { padding: 16px; text-align: left; border-bottom: 1px solid #f1f5f9; }
         th { background-color: var(--secondary); color: var(--primary-dark); font-weight: 600; }
-        tr:hover { background-color: #f8fafc; }
         .price { font-weight: bold; color: var(--primary); font-size: 1.1rem; }
 
-        /* Modal */
-        .modal {
-            display: none; position: fixed; z-index: 9999;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background-color: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(8px);
-        }
-        .modal-content {
-            margin: auto; display: block; max-width: 90%; max-height: 85vh;
-            border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            animation: zoom 0.3s ease;
-        }
-        @keyframes zoom { from {transform:scale(0.95); opacity:0;} to {transform:scale(1); opacity:1;} }
-        .close {
-            position: absolute; top: 20px; right: 30px; color: white;
-            font-size: 40px; font-weight: bold; cursor: pointer; transition: 0.2s;
-        }
-        .close:hover { color: var(--secondary); transform: scale(1.1); }
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(15, 23, 42, 0.95); backdrop-filter: blur(8px); justify-content: center; align-items: center;}
+        .modal-content { max-width: 90%; max-height: 85vh; border-radius: 8px; }
+        .close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
 
-        /* CTA WhatsApp */
-        .cta-container { position: sticky; bottom: 25px; text-align: center; z-index: 100; margin-top: 40px; }
-        .btn-wa {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            background-color: #25d366; color: white; padding: 16px 40px;
-            border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.1rem;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); transition: all 0.3s ease;
-            border: 2px solid #fff;
-        }
-        .btn-wa:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4); }
+        .btn-wa { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #25d366; color: white; padding: 16px 35px; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.05rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3); border: 2px solid #fff; transition: transform 0.2s; }
+        .btn-wa:hover { transform: translateY(-3px); }
+        .map-link { display: inline-block; padding: 10px 20px; margin-top: 10px; background: var(--secondary); color: var(--primary-dark); text-decoration: none; font-weight: 600; border-radius: 8px; }
 
-        /* Link Location */
-        .map-link {
-            display: inline-block; padding: 10px 20px; margin-top: 10px;
-            background: var(--secondary); color: var(--primary-dark);
-            text-decoration: none; font-weight: 600; border-radius: 8px; transition: 0.3s;
+        /* FOOTER ONE-LINE (TEMA KOST) */
+        .dashboard-footer {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: var(--white);
+            border-top: 3px solid var(--primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 24px;
+            margin-top: auto;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            z-index: 20;
+            height: 60px;
+            overflow: hidden;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.03);
         }
-        .map-link:hover { background: var(--primary); color: white; }
+        .footer-brand {
+            display: flex; align-items: center; gap: 8px;
+            color: var(--primary-dark); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .footer-desc { 
+            color: var(--text-light); font-size: 0.8rem; margin: 0 15px; 
+            white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+            text-align: center; flex: 1; font-weight: 500;
+        }
+        .footer-creator-badge {
+            display: inline-flex; align-items: center; gap: 6px;
+            background: rgba(13, 148, 136, 0.08); border: 1px solid rgba(13, 148, 136, 0.2);
+            padding: 5px 14px; border-radius: 20px; color: var(--text-dark); font-size: 0.75rem;
+            white-space: nowrap; transition: all 0.3s ease;
+        }
+        .footer-creator-badge:hover { 
+            background: rgba(13, 148, 136, 0.15); border-color: rgba(13, 148, 136, 0.4); 
+        }
+        .footer-creator-badge strong { color: var(--primary-dark); font-weight: 600; }
 
-        @media (max-width: 600px) {
-            header h1 { font-size: 1.8rem; }
+        @media (max-width: 850px) {
+            .dashboard-footer { 
+                flex-direction: column; justify-content: center; gap: 8px; 
+                padding: 15px; height: auto; 
+            }
+            .footer-desc { display: none; }
             .hero { height: 250px; }
-            .gallery-item.portrait img { height: 280px; }
         }
     </style>
 </head>
 <body>
 
-<header>
+<div class="main-content">
+    <header>
+        <div class="container">
+            <h1>KOST IBU RAHMI</h1>
+            <p>Hunian Putri Khusus Muslimah • Bersih, Nyaman & Strategis</p>
+            <div class="header-divider"></div>
+        </div>
+    </header>
+
     <div class="container">
-        <h1>KOST IBU RAHMI</h1>
-        <p>Hunian Putri Khusus Muslimah • Bersih, Nyaman & Strategis</p>
-    </div>
-</header>
+        <div class="hero"><img src="1-tampak-depan.webp" alt="Tampak Depan" loading="eager"></div>
 
-<div class="container">
-    
-    <!-- Hero Image -->
-    <div class="hero">
-        <img src="1-tampak-depan.webp" alt="Tampak Depan Kost Ibu Rahmi" loading="eager">
-    </div>
-
-    <!-- Virtual Tour Video (Baru) -->
-    <div class="video-wrapper">
-        <h3>🎥 Intip Kondisi Dalam Kost (Lobi)</h3>
-        <div class="video-container">
-            <video controls preload="metadata" poster="1-tampak-depan.webp">
-                <source src="video-portrait.mp4" type="video/mp4">
-                Maaf, browser Anda tidak mendukung pemutar video.
-            </video>
-        </div>
-    </div>
-
-    <!-- Fasilitas -->
-    <div class="card">
-        <h2>Fasilitas & Keunggulan</h2>
-        <ul class="features">
-            <li>Kamar Sangat Luas (Ukuran 4 x 4 meter)</li>
-            <li><strong>FREE Akses Wi-Fi 24 Jam</strong></li>
-            <li>Gratis Biaya Air Bersih (Ditanggung Pemilik)</li>
-            <li>Area Parkir Motor Dalam (Aman)</li>
-            <li>Lingkungan sangat tenang, cocok untuk mahasiswi/pekerja</li>
-        </ul>
-    </div>
-
-    <!-- Galeri Foto (Disesuaikan dengan file baru) -->
-    <h2>Galeri Foto Ruangan</h2>
-    <div class="gallery">
-        <!-- Landscape Images -->
-        <div class="gallery-item" onclick="openModal('kamar-baru.jpeg')">
-            <img src="kamar-baru.jpeg" alt="Suasana Kamar Baru" loading="lazy">
-            <div class="gallery-caption">Kamar Tidur (4x4m)</div>
-        </div>
-        
-        <div class="gallery-item" onclick="openModal('lobi-baru.jpeg')">
-            <img src="lobi-baru.jpeg" alt="Lobi Kost Baru" loading="lazy">
-            <div class="gallery-caption">Lobi Ruang Bersama</div>
+        <div class="card">
+            <h2>Fasilitas & Keunggulan</h2>
+            <ul class="features">
+                <li>Kamar Sangat Luas (Ukuran 4 x 4 meter)</li>
+                <li><strong>FREE Akses Wi-Fi 24 Jam</strong></li>
+                <li>Gratis Biaya Air Bersih</li>
+                <li>Area Parkir Motor Dalam (Aman)</li>
+            </ul>
         </div>
 
-        <div class="gallery-item" onclick="openModal('1-tampak-depan.webp')">
-            <img src="1-tampak-depan.webp" alt="Tampak Depan" loading="lazy">
-            <div class="gallery-caption">Tampak Depan Rumah</div>
+        <h2>Galeri Foto Ruangan</h2>
+        <div class="gallery">
+            <div class="gallery-item" onclick="openModal('kamar-baru.jpeg')"><img src="kamar-baru.jpeg" alt="Kamar"><div class="gallery-caption">Kamar Tidur (4x4m)</div></div>
+            <div class="gallery-item" onclick="openModal('lobi-baru.jpeg')"><img src="lobi-baru.jpeg" alt="Lobi"><div class="gallery-caption">Lobi Ruang Bersama</div></div>
+            <div class="gallery-item portrait" onclick="openModal('dapur-baru.jpeg')"><img src="dapur-baru.jpeg" alt="Dapur"><div class="gallery-caption">Dapur Bersama</div></div>
         </div>
 
-        <!-- Portrait Image (Dapur) -->
-        <div class="gallery-item portrait" onclick="openModal('dapur-baru.jpeg')">
-            <img src="dapur-baru.jpeg" alt="Dapur Bersama Baru" loading="lazy">
-            <div class="gallery-caption">Fasilitas Dapur Bersama</div>
+        <div class="card" style="margin-top: 30px;">
+            <h2>Daftar Harga</h2>
+            <div style="overflow-x: auto;">
+                <table>
+                    <thead><tr><th>Posisi</th><th>Kondisi</th><th>Harga/Bulan</th></tr></thead>
+                    <tbody>
+                        <tr><td>Lantai Bawah</td><td>Full Fasilitas</td><td class="price">Rp 700.000</td></tr>
+                        <tr><td>Lantai Atas</td><td>Kamar Mandi Dalam</td><td class="price">Rp 700.000</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 40px 0;">
+            <a href="https://wa.me/6285262904213" class="btn-wa">
+                <i data-lucide="message-circle" style="width: 22px; height: 22px;"></i>
+                Chat WhatsApp: 0852-6290-4213
+            </a>
         </div>
     </div>
-
-    <!-- Tabel Harga -->
-    <div class="card" style="margin-top: 30px;">
-        <h2>Daftar Tipe Kamar & Harga</h2>
-        <div class="table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Posisi</th>
-                        <th>Kondisi & Fasilitas</th>
-                        <th>Harga / Bulan</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Lantai Bawah</strong></td>
-                        <td>Kamar Lengkap (Include Kasur & Lemari)</td>
-                        <td class="price">Rp 700.000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Lantai Bawah</strong></td>
-                        <td>Kamar Kosongan</td>
-                        <td class="price">Rp 600.000</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Lantai Atas</strong></td>
-                        <td>Kamar Kosongan (Plus Kamar Mandi Dalam)</td>
-                        <td class="price">Rp 700.000</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Lokasi & Kontak -->
-    <div class="card">
-        <h2>Lokasi & Kontak Pemilik</h2>
-        <p style="margin-bottom: 5px;"><strong>Alamat:</strong> Jl. M. Hatta, Anduring, Gang Sakinah No. 59</p>
-        <p style="margin-bottom: 15px;"><strong>Pengelola:</strong> Ibu Rahmi</p>
-        
-        <a href="https://maps.app.goo.gl/Rut1D7bG9JtgX7JR9" target="_blank" class="map-link">
-            📍 Buka di Google Maps
-        </a>
-    </div>
-
-    <!-- Tombol WhatsApp -->
-    <div class="cta-container">
-        <a href="https://wa.me/6285262904213?text=Halo%20Ibu%20Rahmi,%20saya%20lihat%20website%20kost%20dan%20tertarik%20tanya-tanya%20kamar." class="btn-wa">
-            Chat WhatsApp Pemilik
-        </a>
-    </div>
-    
-    <footer style="text-align: center; padding: 40px 0; color: #94a3b8; font-size: 0.85rem;">
-        © 2026 Kost Ibu Rahmi - Hunian Nyaman Anduring. All Rights Reserved.
-    </footer>
 </div>
 
-<!-- Modal untuk klik perbesar gambar -->
-<div id="imageModal" class="modal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">×</span>
-  <img class="modal-content" id="img01">
-</div>
-
-<script>
-    var modal = document.getElementById("imageModal");
-    var modalImg = document.getElementById("img01");
-
-    function openModal(imageSrc) {
-        modal.style.display = "flex"; 
-        modal.style.justifyContent = "center";
-        modal.style.alignItems = "center";
-        modalImg.src = imageSrc;
-    }
-
-    function closeModal() {
-        modal.style.display = "none";
-    }
-</script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-<script>
-    lucide.createIcons();
-</script>
-    <!-- Elegant Minimalist Footer -->
-<style>
-    .personal-footer {
-        margin-top: 5rem;
-        padding: 3rem 1rem 2rem 1rem;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-        background-color: transparent;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-        font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    .personal-desc {
-        color: #64748b;
-        font-size: 0.95rem;
-        text-align: center;
-    }
-    .personal-creator {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        color: #475569;
-        font-size: 0.9rem;
-    }
-    .personal-creator strong {
-        color: #0f172a;
-        font-weight: 600;
-    }
-</style>
-
-<footer class="personal-footer">
-    <p class="personal-desc">Informasi resmi layanan penyewaan hunian eksklusif.</p>
-    <div class="personal-creator">
-        <i data-lucide="home" style="color: #64748b; width: 16px; height: 16px;"></i>
+<footer class="dashboard-footer">
+    <div class="footer-brand">
+        <i data-lucide="home" style="color: #0f766e; width: 18px; height: 18px;"></i>
+        Kost Ibu Rahmi
+    </div>
+    <p class="footer-desc">Hunian strategis dan nyaman di kawasan Anduring, Padang.</p>
+    <div class="footer-creator-badge">
+        <i data-lucide="shield-check" style="color: #0f766e; width: 14px; height: 14px;"></i>
         Dikelola oleh <strong>Ikhsan Radiansyah</strong> &copy; 2026
     </div>
 </footer>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">×</span>
+    <img class="modal-content" id="img01">
+</div>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
+    function openModal(src) { 
+        document.getElementById("imageModal").style.display = "flex"; 
+        document.getElementById("img01").src = src; 
+    }
+    function closeModal() { 
+        document.getElementById("imageModal").style.display = "none"; 
+    }
+</script>
 </body>
 </html>
