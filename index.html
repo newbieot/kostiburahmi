@@ -50,40 +50,40 @@
         .main-content { flex: 1; display: flex; flex-direction: column; align-items: center; }
         .container { width: 100%; max-width: 900px; padding: 0 20px; }
 
-        /* HEADER BOX MINIMALIS (Pink Gelap) - Lebar Dibatasi */
+        /* HEADER BOX MINIMALIS (Pink Gelap) - Lebar disamakan dengan konten */
         header {
             width: 100%;
             text-align: center;
-            padding: 30px 20px 10px 20px;
+            padding: 20px 0 10px 0; /* Padding disesuaikan agar pas di dalam container */
         }
         .header-box {
             background-color: var(--primary-dark);
             color: var(--white);
-            max-width: 550px; /* Minimalis, tidak membentang penuh */
+            width: 100%; /* Membentang penuh mengikuti lebar container */
             margin: 0 auto;
-            padding: 25px 20px;
-            border-radius: 20px;
+            padding: 30px 20px;
+            border-radius: var(--radius); /* Melengkung sama seperti kartu di bawahnya */
             box-shadow: 0 10px 25px rgba(136, 14, 79, 0.2);
             position: relative;
         }
         .header-box h1 { 
-            font-size: 2.1rem; 
+            font-size: 2.2rem; 
             font-weight: 800; 
             letter-spacing: 0.5px; 
             margin-bottom: 5px; 
             color: var(--white);
         }
         .header-box p { 
-            font-size: 0.95rem; 
+            font-size: 1.05rem; 
             color: var(--secondary); 
             font-weight: 500; 
             margin-bottom: 0;
         }
         .header-divider {
-            width: 50px;
-            height: 3px;
+            width: 60px;
+            height: 4px;
             background-color: var(--secondary);
-            margin: 12px auto 0;
+            margin: 15px auto 0;
             border-radius: 2px;
             opacity: 0.8;
         }
@@ -171,7 +171,7 @@
         }
         .video-container {
             width: 100%; 
-            max-width: 300px; 
+            max-width: 300px; /* Lebar pas untuk portrait */
             border-radius: 12px; 
             overflow: hidden;
             box-shadow: 0 0 15px rgba(0,0,0,0.4);
@@ -289,7 +289,7 @@
             .hero { height: 200px; }
             .header-box h1 { font-size: 1.8rem; }
             .header-box p { font-size: 0.85rem; }
-            .badge-wrapper { right: 0; width: 100%; text-align: center; }
+            .badge-wrapper { right: 10px; }
             th, td { padding: 10px 5px; font-size: 0.85rem; }
             .price { font-size: 0.9rem; }
         }
@@ -300,7 +300,7 @@
 <div class="main-content">
     <div class="container">
         
-        <!-- HEADER MINIMALIS DENGAN BADGE -->
+        <!-- HEADER MINIMALIS DENGAN BADGE (Sekarang Sejajar 100%) -->
         <header>
             <div class="header-box">
                 <div class="badge-wrapper">
