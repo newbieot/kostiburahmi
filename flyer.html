@@ -3,402 +3,431 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flyer Kost Ibu Rahmi - Dark Pink</title>
+    <title>Dashboard Generator Flyer - Kost Ibu Rahmi</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
+        :root {
+            --primary: #c2185b; 
+            --primary-dark: #880e4f;
+            --secondary: #fce4ec;
+            --white: #ffffff;
+            --text-dark: #1e293b;
         }
-        body {
-            background-color: #2c3e50;
-            display: flex;
-            justify-content: center;
-            align-items: center; 
-            min-height: 100vh;
-            padding: 20px;
-        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
         
-        /* Layout Canvas 4:3 (1200x900) - Warna Latar Soft Dusty Pink */
-        .flyer-container {
-            width: 1200px;
-            height: 900px;
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 800px;
+        }
+        .dashboard-header h1 { color: #f48fb1; font-size: 2.5rem; margin-bottom: 10px; }
+        .dashboard-header p { color: #94a3b8; font-size: 1.1rem; }
+
+        /* Container Utama Dashboard */
+        .flyers-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            width: 100%;
+            align-items: center;
+        }
+
+        .flyer-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #334155;
+        }
+        .flyer-section h2 { color: #f8fafc; font-size: 1.3rem; font-weight: 600; }
+
+        /* Wrapper untuk menskala flyer agar muat di monitor tanpa merusak resolusi aslinya */
+        .scale-wrapper-1 { width: 540px; height: 675px; overflow: hidden; position: relative; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .scale-wrapper-2 { width: 540px; height: 540px; overflow: hidden; position: relative; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .scale-wrapper-3 { width: 540px; height: 960px; overflow: hidden; position: relative; border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        
+        .scale-content {
+            transform: scale(0.5);
+            transform-origin: top left;
+            position: absolute;
+            top: 0; left: 0;
+        }
+
+        /* ==================== CORE FLYER STYLES (1080px Canvas Base) ==================== */
+        .flyer-canvas {
+            width: 1080px;
             background: linear-gradient(135deg, #fcf0f3 0%, #f7dbe3 100%);
             display: flex;
             flex-direction: column;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
             position: relative;
-            overflow: hidden;
+            color: var(--text-dark);
         }
 
-        /* Header Section - Dark Pink / Maroon */
-        .header {
-            background: linear-gradient(90deg, #6d0e35, #9c1b4d);
+        /* Canvas Sizes */
+        .f-vertical { height: 1350px; }
+        .f-square { height: 1080px; }
+        .f-story { height: 1920px; }
+
+        /* Global Flyer Elements */
+        .f-header {
+            background: linear-gradient(90deg, var(--primary-dark), var(--primary));
             color: white;
-            padding: 20px 40px;
+            padding: 35px 45px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-shrink: 0;
-            box-shadow: 0 4px 15px rgba(109, 14, 53, 0.3);
-            z-index: 2;
+            box-shadow: 0 6px 20px rgba(109, 14, 53, 0.25);
+            z-index: 10;
         }
-        .header-left h1 {
-            font-size: 34px;
-            font-weight: 800;
-            letter-spacing: 1px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            line-height: 1.2;
-        }
-        .header-left p {
-            font-size: 16px;
-            font-weight: 600;
-            background-color: rgba(255, 255, 255, 0.2);
+        .f-header h1 { font-size: 48px; font-weight: 800; letter-spacing: 0.5px; line-height: 1; }
+        .f-header p { font-size: 19px; font-weight: 600; background: rgba(255,255,255,0.2); display: inline-block; padding: 6px 20px; border-radius: 30px; margin-top: 8px; color: #ffe6ee; }
+        .f-header-right { text-align: right; }
+        .f-header-web-text { font-size: 16px; color: #f4c2d7; }
+        .f-header-web-link { color: #fca311; font-size: 28px; font-weight: 700; }
+
+        .f-badge {
+            background: #fca311; color: #5c3a00; padding: 8px 24px; border-radius: 30px;
+            font-weight: 800; font-size: 18px; box-shadow: 0 4px 12px rgba(252, 163, 17, 0.3);
             display: inline-block;
-            padding: 4px 18px;
-            border-radius: 20px;
-            margin-top: 6px;
-            color: #ffe6ee;
-        }
-        .header-right {
-            text-align: right;
-            font-weight: 700;
-        }
-        .header-right .web-text {
-            font-size: 15px;
-            color: #f4c2d7;
-            margin-bottom: 2px;
-        }
-        .header-right .web-link {
-            color: #fca311; /* Tetap kuning agar kontras */
-            font-size: 24px;
-            letter-spacing: 0.5px;
         }
 
-        /* Main Content Grid */
-        .main-content {
-            display: grid;
-            grid-template-columns: 460px 1fr 1.05fr; 
-            gap: 25px;
-            padding: 30px 40px;
-            height: calc(100% - 98px); 
-        }
-
-        /* --- FOTO GRID --- */
-        .col-photos {
-            display: grid;
-            grid-template-columns: 200px 1fr; 
-            grid-template-rows: 250px 1fr 1fr; 
-            gap: 15px;
-            height: 100%;
-        }
-        .col-photos img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 4px solid white;
-            box-shadow: 0 6px 12px rgba(109, 14, 53, 0.15);
-        }
-        .img-depan { grid-column: 1 / 3; grid-row: 1 / 2; } 
-        .img-dapur { grid-column: 1 / 2; grid-row: 2 / 4; } 
-        .img-lobi  { grid-column: 2 / 3; grid-row: 2 / 3; } 
-        .img-kamar { grid-column: 2 / 3; grid-row: 3 / 4; } 
-
-        /* Area Kartu Konten */
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            height: 100%; 
-        }
-        .card-title {
-            color: #880e4f;
-            font-weight: 800;
-            font-size: 20px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            border-bottom: 2px dashed #f4c2d7;
-            padding-bottom: 12px;
-        }
+        .f-card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.04); display: flex; flex-direction: column; position: relative; }
+        .f-card-title { color: var(--primary-dark); font-weight: 800; font-size: 24px; margin-bottom: 12px; border-bottom: 3px dashed #f4c2d7; padding-bottom: 10px; }
         
-        .section-title {
-            font-size: 14px;
-            font-weight: 700;
-            color: #9c1b4d;
-            margin-bottom: 10px;
-            margin-top: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+        .f-section-title { font-size: 17px; font-weight: 700; color: var(--primary); margin-top: 15px; text-transform: uppercase; }
+        .f-section-title:first-of-type { margin-top: 0; }
 
-        /* List Styling */
-        ul { list-style: none; }
-        ul li {
-            margin-bottom: 12px;
-            font-size: 15px;
-            line-height: 1.4;
-            color: #333;
-            padding-left: 28px;
-            text-indent: -28px;
-        }
+        .f-canvas ul { list-style: none; }
+        .f-canvas ul li { margin-bottom: 8px; font-size: 18px; color: #333; padding-left: 30px; position: relative; }
+        .f-canvas ul li::before { content: '✓'; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
 
-        /* Badge Kamar Sisa */
-        .badge {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            background: #fca311; /* Ubah ke gold agar kontras dengan pink */
-            color: #5c3a00;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-weight: 800;
-            font-size: 14px;
-            box-shadow: 0 4px 10px rgba(252, 163, 17, 0.4);
-            animation: pulse 2s infinite;
-        }
+        .f-address-box { font-size: 17px; color: #4a0922; background: #fcf4f6; padding: 12px 15px; border-radius: 10px; border-left: 5px solid var(--primary-dark); font-weight: 500; margin-top: 5px; }
+        .f-promo { background: #fff8e1; color: #f57f17; padding: 12px; border-radius: 12px; font-size: 17px; font-weight: 600; text-align: center; border: 2px dashed #fbc02d; margin-top: 10px; }
 
-        /* Tabel Harga */
-        .price-box {
-            background: #fcf4f6;
-            border: 1px solid #f9dbe4;
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border-left: 5px solid #880e4f;
-        }
-        .price-box h4 {
-            color: #6d0e35;
-            font-size: 16px;
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-        .price-list {
-            font-size: 14.5px;
-            margin-bottom: 6px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px dashed #cbd5e1;
-            padding-bottom: 6px;
-        }
-        .price-list:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-            margin-bottom: 0;
-        }
-        .price-tag {
-            font-weight: 800;
-            color: #c2185b;
-            font-size: 16px;
-        }
-        .price-note {
-            font-size: 11.5px;
-            color: #6c757d;
-            margin-top: 8px;
-            line-height: 1.3;
-            font-style: italic;
-        }
+        /* Prices */
+        .f-price-box { background: #fcf4f6; border: 1px solid #f9dbe4; padding: 15px; border-radius: 12px; margin-bottom: 12px; border-left: 6px solid var(--primary-dark); }
+        .f-price-box h4 { color: var(--primary-dark); font-size: 18px; margin-bottom: 8px; }
+        .f-price-list { font-size: 17px; display: flex; justify-content: space-between; border-bottom: 1px dashed #cbd5e1; padding-bottom: 6px; margin-bottom: 6px; }
+        .f-price-list:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .f-price-tag { font-weight: 800; color: var(--primary); font-size: 20px; }
+        .f-price-note { font-size: 13px; color: #6c757d; font-style: italic; margin-top: 5px; line-height: 1.3; }
 
-        .promo {
-            background: #fff8e1;
-            color: #f57f17;
-            padding: 15px;
-            border-radius: 12px;
-            font-size: 14.5px;
-            font-weight: 600;
-            text-align: center;
-            border: 1px dashed #fbc02d;
-            margin-top: auto; 
-        }
-
-        /* BLOK KONTAK & QR DI KOLOM KANAN */
-        .contact-block {
-            margin-top: auto;
-            background: #fcf4f6;
-            border-radius: 12px;
-            padding: 15px;
-            border: 1px solid #f9dbe4;
-            text-align: center;
-        }
-        .contact-block .title {
-            color: #880e4f;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-        .contact-block .phone {
-            font-size: 24px;
-            font-weight: 800;
-            color: #6d0e35;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-        .qr-wrapper {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        .qr-card {
-            background: white;
-            padding: 8px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-            width: 105px;
-        }
-        .qr-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin-bottom: 5px;
-        }
-        .qr-card p {
-            font-size: 11px;
-            font-weight: 800;
-            margin: 0;
-            color: #333;
-        }
+        /* QR Blocks separate layout style */
+        .f-qr-card { background: white; padding: 10px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); width: 125px; text-align: center; }
+        .f-qr-card img { width: 100%; height: auto; display: block; border-radius: 4px; margin-bottom: 4px; }
+        .f-qr-card p { font-size: 12px; font-weight: 800; margin: 0; }
+        .text-maps { color: var(--primary); }
         .text-wa { color: #25D366; }
-        .text-maps { color: #c2185b; }
 
-        /* Box Alamat Khusus */
-        .address-box {
-            font-size: 14px; 
-            color: #4a0922; 
-            line-height: 1.4; 
-            background: #fcf4f6; 
-            padding: 10px 15px; 
-            border-radius: 8px; 
-            border-left: 4px solid #880e4f; 
-            font-weight: 500;
-        }
+        .f-phone-block { font-size: 32px; font-weight: 800; color: var(--primary-dark); text-align: center; margin-top: 5px; }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
+        /* Gambar Tetap Sesuai Orientasi Asli Tanpa Crop Potong */
+        .img-container { overflow: hidden; border-radius: 12px; border: 4px solid white; box-shadow: 0 6px 12px rgba(0,0,0,0.1); background: #eaeaea; display: flex; justify-content: center; align-items: center; }
+        .img-container img { width: 100%; height: auto; display: block; }
+        .img-container.p-frame img { height: 100%; width: auto; } /* Untuk portrait frame jika dibutuhkan */
+
     </style>
 </head>
 <body>
 
-    <div class="flyer-container">
-        <!-- Header -->
-        <div class="header">
-            <div class="header-left">
-                <h1>KOST IBU RAHMI</h1>
-                <p>TERIMA KOST PUTRI (KHUSUS MUSLIMAH)</p>
-            </div>
-            <div class="header-right">
-                <div class="web-text">Info Lengkap Kunjungi:</div>
-                <div class="web-link">🌐 kost.posnew.com</div>
+    <div class="dashboard-header">
+        <h1>Dashboard Kreator Flyer Kost Ibu Rahmi</h1>
+        <p>Gunakan resolusi zoom browser 100%. Untuk menyimpannya, Anda bisa langsung melakukan screenshot/snipping tool tepat pada area kotak flyer di bawah ini.</p>
+    </div>
+
+    <div class="flyers-showcase">
+
+        <!-- ==================== FLYER 1: VERTIKAL (4:5) ==================== -->
+        <div class="flyer-section">
+            <h2>1. Orientasi Vertikal (Rasio 4:5) – 1080 x 1350 pixel (Cocok untuk Feed IG/FB)</h2>
+            <div class="scale-wrapper-1">
+                <div class="scale-content">
+                    <div class="flyer-canvas f-vertical">
+                        <!-- Header -->
+                        <div class="f-header">
+                            <div>
+                                <h1>KOST IBU RAHMI</h1>
+                                <p>TERIMA KOST PUTRI MUSLIMAH</p>
+                            </div>
+                            <div class="f-header-right">
+                                <div class="f-header-web-text">Info Lengkap & Foto:</div>
+                                <div class="f-header-web-link">🌐 kost.posnew.com</div>
+                            </div>
+                        </div>
+
+                        <!-- Isi Konten Utama -->
+                        <div style="display: grid; grid-template-columns: 570px 420px; gap: 25px; padding: 35px 45px; flex: 1; align-items: start;">
+                            
+                            <!-- Kiri: Foto Utama & Detail Fasilitas -->
+                            <div style="display: flex; flex-direction: column; gap: 20px;">
+                                <!-- Kampanye Gambar Sesuai Orientasi Asli -->
+                                <div class="img-container"><img src="1-tampak-depan.webp" alt="Tampak Depan"></div>
+                                
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div class="img-container"><img src="kamar-baru.jpeg" alt="Kamar"></div>
+                                    <div class="img-container"><img src="lobi-baru.jpeg" alt="Lobi"></div>
+                                </div>
+
+                                <div class="f-card">
+                                    <div class="f-card-title">✨ Fasilitas & Akses Utama</div>
+                                    <ul style="margin-bottom: 10px;">
+                                        <li>🛏️ Kamar Luas Sejuk (Ukuran 4x4 meter)</li>
+                                        <li>📶 FREE Wi-Fi Akses 24 Jam Non-stop</li>
+                                        <li>💧 Gratis Biaya Air Bersih Bersama</li>
+                                        <li>🏍️ Area Parkir Motor Dalam Pagar Aman</li>
+                                    </ul>
+                                    <p style="font-size: 15px; color: #555;">📍 <b>Lokasi Strategis:</b> dekat Univ. Dharma Andalas (7 Mnt), RS Semen Padang (10 Mnt), & Pasar Raya.</p>
+                                </div>
+                            </div>
+
+                            <!-- Kanan: Harga, Kamar Mandi, Terpisah 2 QR Code -->
+                            <div style="display: flex; flex-direction: column; gap: 20px; height: 100%;">
+                                <div class="f-card" style="padding-top: 35px;">
+                                    <div style="position: absolute; top: -15px; left: 25px;"><div class="f-badge">🔥 SISA 3 KAMAR!</div></div>
+                                    <div class="f-card-title" style="margin-top: 10px;">💰 Daftar Harga</div>
+                                    
+                                    <div class="f-price-box">
+                                        <h4>⬇️ LANTAI BAWAH</h4>
+                                        <div class="f-price-list"><span>Kamar Lengkap*</span><span class="f-price-tag">Rp 700rb</span></div>
+                                        <div class="f-price-list"><span>Kamar Kosongan</span><span class="f-price-tag">Rp 600rb</span></div>
+                                    </div>
+                                    <div class="f-price-box">
+                                        <h4>⬆️ LANTAI ATAS</h4>
+                                        <div class="f-price-list"><span>Kosongan + K.M Dalam</span><span class="f-price-tag">Rp 700rb</span></div>
+                                    </div>
+
+                                    <!-- QR 1 Terpisah diletakkan di tengah area kartu lokasi -->
+                                    <div style="display: flex; gap: 15px; align-items: center; background: #fff5f7; padding: 10px; border-radius: 12px; margin-top: 5px;">
+                                        <div class="f-qr-card" style="box-shadow: none; border: 1px solid #f4c2d7; flex-shrink: 0;">
+                                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Rut1D7bG9JtgX7JR9&color=880e4f" alt="QR Maps">
+                                            <p class="text-maps">📍 SCAN LOKASI</p>
+                                        </div>
+                                        <div style="font-size: 14px; color: var(--text-dark);">
+                                            <b>Alamat Kost:</b><br>Jl. M. Hatta, Anduring, Gang Sakinah No. 59, Kota Padang.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Box Dapur Potrait disandingkan mandiri -->
+                                <div style="display: grid; grid-template-columns: 140px 1fr; gap: 15px; background: white; padding: 15px; border-radius: 20px; box-shadow: 0 6px 15px rgba(0,0,0,0.04);">
+                                    <div class="img-container" style="height: 180px;"><img src="dapur-baru.jpeg" style="height: 100%; object-fit: cover;" alt="Dapur"></div>
+                                    <div style="display: flex; flex-direction: column; justify-content: center;">
+                                        <div class="f-promo" style="margin-top: 0; font-size: 15px;">👯‍♀️ Kamar Bisa Berdua!<br><span style="font-size:13px; font-weight:500;">Hanya tambah Rp 200rb/bulan</span></div>
+                                        <p style="font-size: 13px; color: #666; margin-top: 8px; font-style: italic;">*Foto dapur bersama bersih terawat.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Footer Kontak & QR Kedua di paling bawah kanan -->
+                                <div class="f-card" style="background: var(--primary-dark); color: white; text-align: center; padding: 15px; margin-top: auto;">
+                                    <p style="font-size: 14px; color: var(--secondary); font-weight: 600;">Hubungi Via WhatsApp / Booking:</p>
+                                    <div class="f-phone-block" style="color: white; font-size: 28px; margin-bottom: 10px;">📞 0852-6290-4213</div>
+                                    <div style="display: flex; justify-content: center;">
+                                        <!-- QR 2 Terpisah jauh di dasar -->
+                                        <div class="f-qr-card">
+                                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213&color=25D366" alt="QR WA">
+                                            <p class="text-wa">💬 SCAN CHAT WA</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Main Content -->
-        <div class="main-content">
-            
-            <!-- Kolom 1: FOTO -->
-            <div class="col-photos">
-                <img class="img-depan" src="https://kost.posnew.com/1-tampak-depan.webp" alt="Tampak Depan">
-                <img class="img-dapur" src="https://kost.posnew.com/dapur-baru.jpeg" alt="Dapur">
-                <img class="img-lobi" src="https://kost.posnew.com/lobi-baru.jpeg" alt="Lobi">
-                <img class="img-kamar" src="https://kost.posnew.com/kamar-baru.jpeg" alt="Kamar">
-            </div>
-
-            <!-- Kolom 2: Fasilitas & Lokasi -->
-            <div class="card">
-                <div class="card-title">✨ Fasilitas & Akses</div>
-                
-                <div class="section-title" style="margin-top: 0;">Fasilitas Kost</div>
-                <ul>
-                    <li>🛏️ <b>Kamar Super Luas</b> (4x4 meter)</li>
-                    <li>📶 <b>FREE Wi-Fi 24 Jam</b> Anti Lelet</li>
-                    <li>💧 <b>Gratis Biaya Air</b> Sepuasnya</li>
-                    <li>🏍️ <b>Parkir Motor</b> Luas & Aman</li>
-                </ul>
-
-                <div class="section-title">Akses Strategis</div>
-                <ul>
-                    <li>🎓 <b>Univ. Dharma Andalas</b> (± 7 Menit)</li>
-                    <li>🏥 <b>RS Semen Padang / SPH</b> (± 10 Menit)</li>
-                    <li>🏙️ <b>Pusat Kota / Pasar Raya</b> (± 15 Menit)</li>
-                </ul>
-
-                <div class="section-title">📍 Alamat Lokasi</div>
-                <div class="address-box">
-                    Jl. M. Hatta, Anduring, Gang Sakinah No. 59, Kota Padang
-                </div>
-
-                <div class="promo">
-                    👯‍♀️ <b>Bisa Patungan!</b><br>
-                    Tambah Rp 200rb/bln untuk kamar berdua.
-                </div>
-            </div>
-
-            <!-- Kolom 3: Harga & Kontak -->
-            <div class="card">
-                <div class="badge">SISA 3 KAMAR!</div>
-                <div class="card-title">💰 Daftar Harga</div>
-                
-                <div class="price-box">
-                    <h4>⬇️ LANTAI BAWAH (Sisa 2)</h4>
-                    <div class="price-list">
-                        <span>Kamar Lengkap*</span>
-                        <span class="price-tag">Rp 700rb</span>
-                    </div>
-                    <div class="price-list">
-                        <span>Kamar Kosongan</span>
-                        <span class="price-tag">Rp 600rb</span>
-                    </div>
-                    <div class="price-note">*Lengkap: Kasur, Kipas, Lemari.<br>*Listrik kipas & lampu ditanggung pemilik.</div>
-                </div>
-
-                <div class="price-box">
-                    <h4>⬆️ LANTAI ATAS (Sisa 1)</h4>
-                    <div class="price-list">
-                        <span>Kosongan + K.M Dalam</span>
-                        <span class="price-tag">Rp 700rb</span>
-                    </div>
-                    <div class="price-note">*Listrik prabayar/token ditanggung masing-masing penghuni.</div>
-                </div>
-
-                <!-- BLOK KONTAK & QR -->
-                <div class="contact-block">
-                    <div class="title">Informasi & Booking</div>
-                    <div class="phone">📞 0852-6290-4213</div>
-                    
-                    <div class="qr-wrapper">
-                        <!-- QR MAPS -->
-                        <div class="qr-card">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/BZ142Zrb5dBfp2V88&color=c2185b" alt="QR Maps">
-                            <p class="text-maps">📍 SCAN MAPS</p>
+        <!-- ==================== FLYER 2: PERSEGI (1:1) ==================== -->
+        <div class="flyer-section">
+            <h2>2. Orientasi Persegi/Square (Rasio 1:1) – 1080 x 1080 pixel (Cocok untuk Post Utama FB/IG)</h2>
+            <div class="scale-wrapper-2">
+                <div class="scale-content">
+                    <div class="flyer-canvas f-square">
+                        <!-- Header Ringkas -->
+                        <div class="f-header" style="padding: 20px 45px;">
+                            <div>
+                                <h1 style="font-size: 42px;">KOST IBU RAHMI</h1>
+                                <p style="font-size: 16px; margin-top: 4px;">KOST PUTRI MUSLIMAH ANDURING</p>
+                            </div>
+                            <div class="f-header-right">
+                                <div class="f-header-web-link" style="font-size: 26px;">🌐 kost.posnew.com</div>
+                            </div>
                         </div>
-                        <!-- QR WA -->
-                        <div class="qr-card">
-                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213&color=25D366" alt="QR WhatsApp">
-                            <p class="text-wa">💬 CHAT WA</p>
+
+                        <!-- Grid Konten 1:1 Horisontal -->
+                        <div style="display: grid; grid-template-columns: 460px 530px; gap: 20px; padding: 25px 45px; flex: 1; align-items: start;">
+                            
+                            <!-- Kolom Kiri: Koleksi Foto Gabungan -->
+                            <div style="display: flex; flex-direction: column; gap: 12px;">
+                                <div class="img-container" style="height: 190px;"><img src="1-tampak-depan.webp" style="height: 100%; object-fit: cover;" alt="Tampak Depan"></div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                    <div class="img-container" style="height: 140px;"><img src="kamar-baru.jpeg" style="height: 100%; object-fit: cover;" alt="Kamar"></div>
+                                    <div class="img-container" style="height: 140px;"><img src="lobi-baru.jpeg" style="height: 100%; object-fit: cover;" alt="Lobi"></div>
+                                </div>
+                                <div style="display: grid; grid-template-columns: 110px 1fr; gap: 12px; background: white; padding: 10px; border-radius: 12px;">
+                                    <div class="img-container" style="height: 140px;"><img src="dapur-baru.jpeg" style="height: 100%; object-fit: cover;" alt="Dapur"></div>
+                                    <!-- QR 1 diletakkan di sebelah kiri bawah kolase foto -->
+                                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding-left: 10px;">
+                                        <div class="f-qr-card" style="box-shadow: none; border: 1px solid #f4c2d7; width: 105px;">
+                                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Rut1D7bG9JtgX7JR9&color=880e4f" alt="QR Maps">
+                                            <p class="text-maps" style="font-size: 10px;">📍 SCAN LOKASI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kolom Kanan: Detail & Informasi Bisnis -->
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <div class="f-badge" style="font-size: 16px; padding: 6px 20px;">🔥 SISA 3 KAMAR!</div>
+                                    <div style="font-size: 14px; font-weight: bold; color: #555;">📍 Area Jl. M. Hatta No. 59</div>
+                                </div>
+
+                                <div class="f-card" style="padding: 15px 20px;">
+                                    <div class="f-price-list"><span>Lantai Bawah (Kamar Lengkap)</span><span class="f-price-tag">Rp 700rb</span></div>
+                                    <div class="f-price-list"><span>Lantai Bawah (Kosongan)</span><span class="f-price-tag">Rp 600rb</span></div>
+                                    <div class="f-price-list" style="border: none; padding: 0; margin: 0;"><span>Lantai Atas (K.Mandi Dalam)</span><span class="f-price-tag">Rp 700rb</span></div>
+                                </div>
+
+                                <div class="f-card" style="padding: 15px 20px;">
+                                    <ul>
+                                        <li style="font-size: 16px;">📶 FREE Akses Wi-Fi Kencang & Air Gratis</li>
+                                        <li style="font-size: 16px;">🛏️ Ukuran Kamar Luas Bebas Sumpek (4x4m)</li>
+                                        <li style="font-size: 16px;">🏍️ Parkir Motor Dalam Pagar Sangat Aman</li>
+                                    </ul>
+                                    <div class="f-promo" style="font-size: 15px; padding: 6px; margin-top: 5px;">👯‍♀️ Bisa Patungan Berdua! (+200rb)</div>
+                                </div>
+
+                                <!-- Blok Hubungi & QR Kedua diletakkan di sudut kanan bawah (Terpisah Horisontal) -->
+                                <div style="display: flex; background: var(--primary-dark); color: white; padding: 15px; border-radius: 16px; justify-content: space-between; align-items: center;">
+                                    <div style="text-align: left;">
+                                        <p style="font-size: 13px; color: var(--secondary);">Hubungi Ibu Rahmi:</p>
+                                        <p style="font-size: 22px; font-weight: 800; color: #fff;">0852-6290-4213</p>
+                                    </div>
+                                    <!-- QR 2 Berada di kanan bawah ekstrem -->
+                                    <div class="f-qr-card" style="width: 100px; padding: 6px;">
+                                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213&color=25D366" alt="QR WA">
+                                        <p class="text-wa" style="font-size: 10px;">💬 CHAT WA</p>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-                
             </div>
-
         </div>
+
+        <!-- ==================== FLYER 3: VERTIKAL PENUH (9:16) ==================== -->
+        <div class="flyer-section">
+            <h2>3. Orientasi Vertikal Penuh (Rasio 9:16) – 1080 x 1920 pixel (Cocok untuk IG / WhatsApp Story)</h2>
+            <div class="scale-wrapper-3">
+                <div class="scale-content">
+                    <div class="flyer-canvas f-story">
+                        <!-- Header -->
+                        <div class="f-header" style="padding: 45px;">
+                            <div>
+                                <h1 style="font-size: 52px;">KOST IBU RAHMI</h1>
+                                <p style="font-size: 20px;">KHUSUS PUTRI MUSLIMAH</p>
+                            </div>
+                            <div class="f-header-right">
+                                <div class="f-header-web-text" style="font-size: 18px;">Web Resmi:</div>
+                                <div class="f-header-web-link" style="font-size: 32px;">🌐 kost.posnew.com</div>
+                            </div>
+                        </div>
+
+                        <!-- Konten Mengalir Kebawah (Vertikal Penuh) -->
+                        <div class="main-content" style="padding: 40px 45px; display: flex; flex-direction: column; gap: 30px; flex: 1;">
+                            
+                            <!-- Paket Koleksi Foto Tanpa Potong -->
+                            <div style="display: flex; flex-direction: column; gap: 15px;">
+                                <div class="img-container"><img src="1-tampak-depan.webp" alt="Tampak Depan"></div>
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                    <div class="img-container" style="height: 240px;"><img src="kamar-baru.jpeg" style="height:100%; object-fit:cover;" alt="Kamar"></div>
+                                    <div class="img-container" style="height: 240px;"><img src="lobi-baru.jpeg" style="height:100%; object-fit:cover;" alt="Lobi"></div>
+                                </div>
+                            </div>
+
+                            <!-- QR 1 Terpisah diletakkan di area atas dekat Informasi Alamat -->
+                            <div class="f-card" style="flex-direction: row; gap: 20px; align-items: center; padding: 20px;">
+                                <div class="f-qr-card" style="flex-shrink: 0; border: 1px solid #f4c2d7;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Rut1D7bG9JtgX7JR9&color=880e4f" alt="QR Maps">
+                                    <p class="text-maps">📍 SCAN MAPS</p>
+                                </div>
+                                <div>
+                                    <h3 style="color:var(--primary-dark); font-size:20px; margin-bottom:5px;">Alamat Lengkap Kost:</h3>
+                                    <p class="f-address-box" style="margin-top:0;">Jl. M. Hatta, Anduring, Gang Sakinah No. 59, Kota Padang</p>
+                                </div>
+                            </div>
+
+                            <!-- Informasi Fasilitas Modern -->
+                            <div class="f-card">
+                                <div class="f-card-title">✨ Keunggulan & Fasilitas</div>
+                                <ul>
+                                    <li style="font-size:20px; margin-bottom:12px;">🛏️ <b>Kamar Super Luas (4x4 meter)</b></li>
+                                    <li style="font-size:20px; margin-bottom:12px;">📶 <b>FREE Akses Wi-Fi 24 Jam</b></li>
+                                    <li style="font-size:20px; margin-bottom:12px;">💧 <b>Gratis Kuota Air Bersih</b></li>
+                                    <li style="font-size:20px; margin-bottom:12px;">🏍️ <b>Parkir Motor Luas Dalam Pagar</b></li>
+                                </ul>
+                                <p style="font-size:16px; color:#666; margin-top:10px;">Akses Dekat Kampus Univ. Dharma Andalas, RS Semen Padang, & Mini Market.</p>
+                            </div>
+
+                            <!-- Detail Tabel Harga & Kamar Mandi -->
+                            <div class="f-card" style="padding-top: 40px;">
+                                <div style="position: absolute; top: -20px; right: 30px;"><div class="f-badge">🔥 SISA 3 KAMAR!</div></div>
+                                <div class="f-card-title">💰 Tarif Sewa Kost</div>
+                                
+                                <div class="f-price-box">
+                                    <h4 style="font-size:20px;">⬇️ LANTAI BAWAH</h4>
+                                    <div class="f-price-list"><span>Kamar Lengkap (Kasur, Kipas, Lemari)</span><span class="f-price-tag">Rp 700rb</span></div>
+                                    <div class="f-price-list"><span>Kamar Kosongan</span><span class="f-price-tag">Rp 600rb</span></div>
+                                </div>
+
+                                <div class="f-price-box">
+                                    <h4 style="font-size:20px;">⬆️ LANTAI ATAS</h4>
+                                    <div class="f-price-list"><span>Kamar Kosongan + Kamar Mandi Dalam</span><span class="f-price-tag">Rp 700rb</span></div>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 130px 1fr; gap: 20px; margin-top: 10px; align-items: center;">
+                                    <div class="img-container" style="height: 150px;"><img src="dapur-baru.jpeg" style="height:100%; object-fit:cover;" alt="Dapur"></div>
+                                    <div class="f-promo" style="margin: 0; padding: 15px;">👯‍♀️ <b>Bisa Patungan Berdua!</b><br>Hanya tambah Rp 200rb /bulan.</div>
+                                </div>
+                            </div>
+
+                            <!-- Footer Kontak & QR Kedua ditaruh ekstrem di paling dasar flyer 9:16 -->
+                            <div class="f-card" style="background: linear-gradient(135deg, var(--primary-dark), #560430); color: white; padding: 30px; margin-top: auto; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                                <div style="text-align: left;">
+                                    <h4 style="font-size: 18px; color: var(--secondary); margin-bottom: 5px;">Tanya Jawab / Booking:</h4>
+                                    <div style="font-size: 34px; font-weight: 800; color: #fff;">📞 Ibu Rahmi</div>
+                                    <div style="font-size: 28px; font-weight: 700; color: #fca311; margin-top: 2px;">0852-6290-4213</div>
+                                </div>
+                                <!-- QR 2 Terpisah Sangat Jauh di dasar halaman -->
+                                <div class="f-qr-card" style="width: 140px; padding: 12px;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213&color=25D366" alt="QR WA">
+                                    <p class="text-wa" style="font-size: 13px;">💬 CHAT WA</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>
