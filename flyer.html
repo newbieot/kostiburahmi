@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Warna Tema Utama Kost Ibu Rahmi */
             --primary: #c2185b;
             --primary-dark: #880e4f;
             --secondary: #fce4ec;
@@ -15,20 +14,11 @@
             --text-dark: #1e293b;
             --white: #ffffff;
             --gold: #fca311;
-            --gold-bg: #fff8e1;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
         
-        /* Dashboard diubah jadi Putih Bersih */
-        body {
-            background-color: #ffffff;
-            color: #1e293b;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+        body { background-color: #ffffff; color: #1e293b; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
 
         .dashboard-header { text-align: center; margin-bottom: 50px; max-width: 800px; }
         .dashboard-header h1 { color: var(--primary-dark); font-size: 2.2rem; margin-bottom: 10px; font-weight: 800; }
@@ -38,35 +28,22 @@
         .flyer-section { background: #f8fafc; padding: 30px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 20px; border: 1px solid #e2e8f0; width: 100%; max-width: 700px; }
         .flyer-section h2 { color: var(--primary-dark); font-size: 1.25rem; font-weight: 700; }
 
-        /* SCALER DASHBOARD */
         .scale-wrapper-1 { width: 540px; height: 675px; overflow: hidden; border-radius: 12px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 1px solid #e2e8f0; }
         .scale-wrapper-2 { width: 540px; height: 540px; overflow: hidden; border-radius: 12px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 1px solid #e2e8f0; }
         .scale-wrapper-3 { width: 486px; height: 864px; overflow: hidden; border-radius: 12px; position: relative; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 1px solid #e2e8f0; }
         .scale-content-1, .scale-content-2 { transform: scale(0.5); transform-origin: top left; }
         .scale-content-3 { transform: scale(0.45); transform-origin: top left; }
 
-        /* ================= KANVAS ABSOLUT ================= */
-        .f-canvas {
-            background: var(--bg-flyer); color: var(--text-dark); position: relative; overflow: hidden; 
-            display: flex; flex-direction: column;
-        }
-
-        /* HEADER */
-        .f-header {
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary)); border-radius: 20px;
-            display: flex; justify-content: space-between; align-items: center; box-shadow: 0 10px 20px rgba(136, 14, 79, 0.25);
-        }
+        .f-canvas { background: var(--bg-flyer); color: var(--text-dark); position: relative; overflow: hidden; display: block; }
+        
+        .f-header { background: linear-gradient(90deg, var(--primary-dark), var(--primary)); border-radius: 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 10px 20px rgba(136, 14, 79, 0.25); }
         .f-header-left h1 { color: var(--white); font-weight: 900; line-height: 1; letter-spacing: 1px; }
         .f-header-left p { color: var(--secondary); font-weight: 600; letter-spacing: 1.5px; }
         .f-header-right { text-align: right; }
         .f-header-right p { color: var(--secondary); margin-bottom: -5px; }
         .f-header-right h2 { color: var(--gold); font-weight: 800; }
 
-        /* KARTU KOMPONEN (Flex Space-Between menyebarkan konten merata mengisi seluruh card) */
-        .f-card {
-            background: var(--white); border-radius: 16px; box-shadow: 0 8px 15px rgba(0,0,0,0.04);
-            border: 2px solid var(--secondary); display: flex; flex-direction: column; justify-content: space-between; position: relative;
-        }
+        .f-card { background: var(--white); border-radius: 16px; box-shadow: 0 8px 15px rgba(0,0,0,0.04); border: 2px solid var(--secondary); display: flex; flex-direction: column; justify-content: space-between; position: relative; }
         .c-title { color: var(--primary-dark); font-weight: 800; border-bottom: 3px dashed var(--secondary); display: flex; align-items: center; }
         .c-sub { color: var(--primary); font-weight: 700; text-transform: uppercase; }
         
@@ -74,8 +51,8 @@
         ul li { position: relative; line-height: 1.3; }
         ul li::before { content: '✓'; position: absolute; left: 0; color: var(--white); background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
         
-        .f-badge { position: absolute; background: var(--gold); color: #5c3a00; font-weight: 800; border-radius: 30px; box-shadow: 0 5px 15px rgba(252, 163, 17, 0.4); }
-        .f-promo { background: var(--gold-bg); color: #f57f17; border: 2px dashed #fbc02d; text-align: center; font-weight: 700; border-radius: 12px; }
+        .f-badge { position: absolute; background: var(--gold); color: #5c3a00; font-weight: 800; border-radius: 30px; box-shadow: 0 5px 15px rgba(252, 163, 17, 0.4); text-align: center; }
+        .f-promo { background: #fff8e1; color: #f57f17; border: 2px dashed #fbc02d; text-align: center; font-weight: 700; border-radius: 12px; }
         
         .p-row { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px dashed #e2e8f0; font-weight: 500; }
         .p-row:last-of-type { border-bottom: none; }
@@ -86,8 +63,7 @@
         .f-qr-box img { width: 100%; display: block; border-radius: 6px; }
         .f-qr-box p { font-weight: 800; }
         
-        /* GAMBAR PRESISI (Tinggi dan Lebar diatur mutlak 100% tanpa celah) */
-        .img-wrap { border-radius: 16px; border: 4px solid var(--white); box-shadow: 0 6px 15px rgba(0,0,0,0.08); overflow: hidden; background: #eaeaea; }
+        .img-wrap { border-radius: 16px; border: 4px solid var(--white); box-shadow: 0 6px 15px rgba(0,0,0,0.08); overflow: hidden; background: #eaeaea; display: block; }
         .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
     </style>
 </head>
@@ -95,18 +71,18 @@
 
     <div class="dashboard-header">
         <h1>Dashboard Kreator Flyer Kost Ibu Rahmi</h1>
-        <p>Latar belakang telah disesuaikan menjadi putih bersih. Seluruh susunan komponen flyer telah dikunci secara absolut agar 100% rapat, presisi, dan tidak ada elemen yang terpotong.</p>
+        <p>Semua dimensi piksel telah dikunci absolut. Semua gambar tampil 100% utuh tanpa potong. Seluruh teks akan merenggang menyentuh atap dan dasar kotak untuk membasmi ruang kosong.</p>
     </div>
 
     <div class="flyers-showcase">
 
-        <!-- ==================== FLYER 1: VERTIKAL (1080 x 1350) ==================== -->
+        <!-- ==================== FLYER 1: VERTIKAL (1080x1350) ==================== -->
         <div class="flyer-section">
             <h2>1. Orientasi Vertikal (Rasio 4:5) – 1080 x 1350 pixel</h2>
             <div class="scale-wrapper-1">
                 <div class="scale-content-1 f-canvas" style="width: 1080px; height: 1350px; padding: 40px;">
                     
-                    <!-- Header: 130px -->
+                    <!-- Header -->
                     <div class="f-header" style="height: 130px; padding: 0 40px;">
                         <div class="f-header-left">
                             <h1 style="font-size: 52px;">KOST IBU RAHMI</h1>
@@ -118,112 +94,117 @@
                         </div>
                     </div>
 
-                    <!-- Area Bawah: 1110px (1350 - 80(pad) - 130(hdr) - 30(gap)) -->
+                    <!-- Area Konten (1110px Total Height) -->
                     <div style="height: 1110px; margin-top: 30px; display: flex; justify-content: space-between;">
                         
-                        <!-- Kolom Kiri: Lebar 485px -->
-                        <div style="width: 485px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Kolom Kiri -->
+                        <div style="width: 490px; height: 1110px; display: flex; flex-direction: column; justify-content: space-between;">
                             
-                            <!-- Blok Foto Kiri (570px) -->
-                            <div style="height: 570px; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div class="img-wrap" style="height: 250px;"><img src="1-tampak-depan.webp" alt="Depan"></div>
-                                <div style="display: flex; justify-content: space-between; height: 145px;">
-                                    <div class="img-wrap" style="width: 235px;"><img src="kamar-baru.jpeg" alt="Kamar 1"></div>
-                                    <div class="img-wrap" style="width: 235px;"><img src="lobi-baru.jpeg" alt="Lobi"></div>
-                                </div>
-                                <div class="img-wrap" style="height: 145px;"><img src="kamar-lantai-2.webp" alt="Kamar 2" style="object-position: center;"></div>
+                            <!-- Foto 1 (Presisi Rasio Asli) -->
+                            <div class="img-wrap" style="width: 490px; height: 215px;">
+                                <img src="1-tampak-depan.webp" alt="Depan">
                             </div>
                             
-                            <!-- Blok Fasilitas (520px) -->
-                            <div class="f-card" style="height: 520px; padding: 25px;">
-                                <div class="c-title" style="font-size: 24px; padding-bottom: 12px;">✨ Fasilitas & Akses</div>
+                            <!-- Foto 2 & 3 (Presisi 4:3) -->
+                            <div style="display: flex; justify-content: space-between; width: 490px; height: 176px;">
+                                <div class="img-wrap" style="width: 235px; height: 176px;"><img src="kamar-baru.jpeg" alt="Kamar"></div>
+                                <div class="img-wrap" style="width: 235px; height: 176px;"><img src="lobi-baru.jpeg" alt="Lobi"></div>
+                            </div>
+                            
+                            <!-- Kartu Fasilitas (Teks mengisi sisa 499px) -->
+                            <div class="f-card" style="width: 490px; height: 499px; padding: 25px;">
+                                <div class="c-title" style="font-size: 24px; padding-bottom: 10px;">✨ Fasilitas & Akses</div>
                                 
                                 <div>
                                     <div class="c-sub" style="font-size: 18px; margin-bottom: 10px;">Fasilitas Kost</div>
-                                    <ul style="margin-bottom: 15px;">
-                                        <li style="font-size: 17px; margin-bottom: 8px; padding-left: 28px;"><b>Kamar Luas</b> (Ukuran 4x4m)</li>
-                                        <li style="font-size: 17px; margin-bottom: 8px; padding-left: 28px;"><b>FREE Wi-Fi 24 Jam</b> Anti Lelet</li>
-                                        <li style="font-size: 17px; margin-bottom: 8px; padding-left: 28px;"><b>Gratis Air Bersih</b> Sepuasnya</li>
-                                        <li style="font-size: 17px; padding-left: 28px;"><b>Parkir Motor</b> Luas & Aman</li>
+                                    <ul>
+                                        <li style="font-size: 16px; margin-bottom: 6px; padding-left: 28px;"><b>Kamar Luas</b> (Ukuran 4x4m)</li>
+                                        <li style="font-size: 16px; margin-bottom: 6px; padding-left: 28px;"><b>FREE Wi-Fi 24 Jam</b> Anti Lelet</li>
+                                        <li style="font-size: 16px; margin-bottom: 6px; padding-left: 28px;"><b>Gratis Air Bersih</b> Sepuasnya</li>
+                                        <li style="font-size: 16px; padding-left: 28px;"><b>Parkir Motor</b> Luas & Aman</li>
                                     </ul>
                                 </div>
 
                                 <div>
                                     <div class="c-sub" style="font-size: 18px; margin-bottom: 10px;">Akses Strategis</div>
                                     <ul>
-                                        <li style="font-size: 17px; margin-bottom: 8px; padding-left: 28px;">Univ. Dharma Andalas (± 7 Mnt)</li>
-                                        <li style="font-size: 17px; margin-bottom: 8px; padding-left: 28px;">RS Semen Padang / SPH (± 10 Mnt)</li>
-                                        <li style="font-size: 17px; margin-bottom: 8px; padding-left: 28px;">Basko City Mall (± 10 Menit)</li>
-                                        <li style="font-size: 17px; padding-left: 28px;">Pusat Kota / Pasar Raya (± 15 Mnt)</li>
+                                        <li style="font-size: 16px; margin-bottom: 6px; padding-left: 28px;">Univ. Dharma Andalas (± 7 Mnt)</li>
+                                        <li style="font-size: 16px; margin-bottom: 6px; padding-left: 28px;">RS Semen Padang / SPH (± 10 Mnt)</li>
+                                        <li style="font-size: 16px; margin-bottom: 6px; padding-left: 28px;">Basko City Mall (± 10 Menit)</li>
+                                        <li style="font-size: 16px; padding-left: 28px;">Pusat Kota / Pasar Raya (± 15 Mnt)</li>
                                     </ul>
+                                </div>
+                            </div>
+                            
+                            <!-- QR Maps -->
+                            <div class="f-card" style="width: 490px; height: 160px; flex-direction: row; align-items: center; justify-content: flex-start; padding: 0 25px; gap: 20px;">
+                                <div class="f-qr-box" style="width: 100px; border: 1px solid var(--secondary); padding: 5px;">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Gx7gHEeugVkciWht6&color=880e4f" alt="Maps">
+                                    <p style="color: var(--primary); font-size: 11px; margin-top: 2px;">📍 SCAN LOKASI</p>
+                                </div>
+                                <div style="flex: 1;">
+                                    <h3 style="color: var(--primary-dark); font-size: 20px; margin-bottom: 5px;">Alamat Kost:</h3>
+                                    <p style="font-size: 15px; line-height: 1.4; color: var(--text-dark);">Jl. M. Hatta, Anduring, Gang Sakinah No. 59, Kota Padang.</p>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Kolom Kanan: Lebar 485px -->
-                        <div style="width: 485px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Kolom Kanan -->
+                        <div style="width: 490px; height: 1110px; display: flex; flex-direction: column; justify-content: space-between;">
                             
-                            <!-- Kartu Harga (680px) -->
-                            <div class="f-card" style="height: 680px; padding: 30px;">
-                                <div class="f-badge" style="font-size: 18px; top:-18px; right: 25px; padding: 8px 25px;">🔥 SISA 3 KAMAR!</div>
-                                <div class="c-title" style="font-size: 26px; padding-bottom: 15px;">💰 Daftar Harga</div>
-                                
-                                <div class="c-sub" style="font-size: 19px;">⬇️ LANTAI BAWAH</div>
-                                <div class="p-row" style="padding-bottom: 12px;"><span style="font-size: 19px;">Kamar Lengkap*</span><span class="p-val" style="font-size: 24px;">Rp 700rb</span></div>
-                                <div class="p-row" style="padding-bottom: 12px;"><span style="font-size: 19px;">Kamar Kosongan</span><span class="p-val" style="font-size: 24px;">Rp 600rb</span></div>
-                                
-                                <div class="c-sub" style="font-size: 19px; margin-top: 10px;">⬆️ LANTAI ATAS</div>
-                                <div class="p-row" style="padding-bottom: 12px; border-bottom: none;"><span style="font-size: 19px;">Kosongan + K.M Dalam*</span><span class="p-val" style="font-size: 24px;">Rp 700rb</span></div>
+                            <!-- Foto 4 (Presisi 4:3) -->
+                            <div class="img-wrap" style="width: 490px; height: 368px;">
+                                <img src="kamar-lantai-2.webp" alt="Kamar 2">
+                            </div>
 
-                                <div class="p-note" style="font-size: 15px; padding: 15px; margin-top: 5px;">
+                            <!-- Kartu Harga (Teks mengisi sisa 542px) -->
+                            <div class="f-card" style="width: 490px; height: 542px; padding: 25px 30px;">
+                                <div class="f-badge" style="font-size: 17px; top:-17px; right: 25px; padding: 6px 25px;">🔥 SISA 3 KAMAR!</div>
+                                <div class="c-title" style="font-size: 24px; padding-bottom: 10px;">💰 Daftar Harga</div>
+                                
+                                <div class="c-sub" style="font-size: 18px;">⬇️ LANTAI BAWAH</div>
+                                <div class="p-row" style="padding-bottom: 10px;"><span style="font-size: 18px;">Kamar Lengkap*</span><span class="p-val" style="font-size: 22px;">Rp 700rb</span></div>
+                                <div class="p-row" style="padding-bottom: 10px;"><span style="font-size: 18px;">Kamar Kosongan</span><span class="p-val" style="font-size: 22px;">Rp 600rb</span></div>
+                                
+                                <div class="c-sub" style="font-size: 18px; margin-top: 10px;">⬆️ LANTAI ATAS</div>
+                                <div class="p-row" style="padding-bottom: 10px; border-bottom: none;"><span style="font-size: 18px;">Kosongan + K.M Dalam*</span><span class="p-val" style="font-size: 22px;">Rp 700rb</span></div>
+
+                                <div class="p-note" style="font-size: 14px; padding: 12px; margin-top: 5px;">
                                     <b>*Catatan Spesifik:</b><br>
                                     Lengkap = Kasur, Kipas Angin, Lemari.<br>
                                     Listrik lt.bawah = ditanggung pemilik.<br>
                                     Listrik lt.atas = token ditanggung sendiri.
                                 </div>
 
-                                <div class="f-promo" style="padding: 18px; font-size: 19px;">👯‍♀️ Bisa Patungan! (+ Rp 200rb/bln)</div>
+                                <div class="f-promo" style="padding: 12px; font-size: 18px;">👯‍♀️ Bisa Patungan! (+ Rp 200rb/bln)</div>
                             </div>
 
-                            <!-- QR Maps (195px) -->
-                            <div class="f-card" style="height: 195px; flex-direction: row; align-items: center; justify-content: flex-start; padding: 20px 25px; gap: 20px;">
-                                <div class="f-qr-box" style="width: 125px; border: 1px solid var(--secondary); padding: 6px;">
-                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Gx7gHEeugVkciWht6&color=880e4f" alt="Maps">
-                                    <p style="color: var(--primary); font-size: 12px; margin-top: 2px;">📍 SCAN LOKASI</p>
-                                </div>
-                                <div style="flex: 1;">
-                                    <h3 style="color: var(--primary-dark); font-size: 22px; margin-bottom: 5px;">Alamat Kost:</h3>
-                                    <p style="font-size: 16px; line-height: 1.4; color: var(--text-dark);">Jl. M. Hatta, Anduring, Gang Sakinah No. 59, Kota Padang.</p>
-                                </div>
-                            </div>
-
-                            <!-- QR WA (195px) -->
-                            <div style="height: 195px; background: var(--primary-dark); border-radius: 16px; display: flex; align-items: center; justify-content: space-between; padding: 25px 35px; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
+                            <!-- QR WA -->
+                            <div style="width: 490px; height: 160px; background: var(--primary-dark); border-radius: 16px; display: flex; align-items: center; justify-content: space-between; padding: 0 35px; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
                                 <div>
-                                    <p style="color:var(--secondary); font-size: 18px; margin-bottom: 2px;">Tanya & Booking Via WA:</p>
-                                    <h3 style="color: var(--white); font-size: 38px; line-height: 1.1;">0852-6290-4213</h3>
-                                    <p style="color: var(--gold); font-size: 20px; font-weight: 700; margin-top: 4px;">(Ibu Rahmi)</p>
+                                    <p style="color:var(--secondary); font-size: 17px; margin-bottom: 2px;">Tanya & Booking Via WA:</p>
+                                    <h3 style="color: var(--white); font-size: 36px; line-height: 1.1;">0852-6290-4213</h3>
+                                    <p style="color: var(--gold); font-size: 19px; font-weight: 700; margin-top: 2px;">(Ibu Rahmi)</p>
                                 </div>
-                                <div class="f-qr-box" style="width: 125px; padding: 8px;">
+                                <div class="f-qr-box" style="width: 105px; padding: 8px;">
                                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213&color=25D366" alt="WA">
-                                    <p style="color: #25D366; font-size: 14px; margin-top: 4px;">💬 CHAT WA</p>
+                                    <p style="color: #25D366; font-size: 13px; margin-top: 4px;">💬 CHAT WA</p>
                                 </div>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
-
-        <!-- ==================== FLYER 2: PERSEGI (1080 x 1080) ==================== -->
+        <!-- ==================== FLYER 2: PERSEGI (1080x1080) ==================== -->
         <div class="flyer-section">
             <h2>2. Orientasi Persegi/Square (Rasio 1:1) – 1080 x 1080 pixel</h2>
             <div class="scale-wrapper-2">
                 <div class="scale-content-2 f-canvas" style="width: 1080px; height: 1080px; padding: 35px;">
                     
-                    <!-- Header: 130px -->
+                    <!-- Header -->
                     <div class="f-header" style="height: 130px; padding: 0 35px;">
                         <div class="f-header-left">
                             <h1 style="font-size: 46px;">KOST IBU RAHMI</h1>
@@ -234,24 +215,26 @@
                         </div>
                     </div>
 
-                    <!-- Area Bawah: 850px (1080 - 70(pad) - 130(hdr) - 30(gap)) -->
+                    <!-- Area Konten (850px Total Height) -->
                     <div style="height: 850px; margin-top: 30px; display: flex; justify-content: space-between;">
                         
-                        <!-- Kolom Kiri: Lebar 490px -->
-                        <div style="width: 490px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Kolom Kiri -->
+                        <div style="width: 495px; height: 850px; display: flex; flex-direction: column; justify-content: space-between;">
                             
-                            <!-- Foto Blok (420px) -->
-                            <div style="height: 420px; display: flex; flex-direction: column; justify-content: space-between;">
-                                <div class="img-wrap" style="height: 190px;"><img src="1-tampak-depan.webp" alt="Depan"></div>
-                                <div style="display: flex; justify-content: space-between; height: 105px;">
-                                    <div class="img-wrap" style="width: 237px;"><img src="kamar-baru.jpeg" alt="Kamar 1"></div>
-                                    <div class="img-wrap" style="width: 237px;"><img src="lobi-baru.jpeg" alt="Lobi"></div>
-                                </div>
-                                <div class="img-wrap" style="height: 105px;"><img src="kamar-lantai-2.webp" alt="Kamar 2" style="object-position: center;"></div>
+                            <!-- Foto 1 (Presisi Rasio Asli) -->
+                            <div class="img-wrap" style="width: 495px; height: 217px;">
+                                <img src="1-tampak-depan.webp" alt="Depan">
                             </div>
-
-                            <!-- Fasilitas (410px) -->
-                            <div class="f-card" style="height: 410px; padding: 25px;">
+                            
+                            <!-- Foto 2, 3, 4 Berjejer (Presisi 4:3) -->
+                            <div style="display: flex; justify-content: space-between; width: 495px; height: 116px;">
+                                <div class="img-wrap" style="width: 155px; height: 116px;"><img src="kamar-baru.jpeg" alt="Kamar 1"></div>
+                                <div class="img-wrap" style="width: 155px; height: 116px;"><img src="lobi-baru.jpeg" alt="Lobi"></div>
+                                <div class="img-wrap" style="width: 155px; height: 116px;"><img src="kamar-lantai-2.webp" alt="Kamar 2"></div>
+                            </div>
+                            
+                            <!-- Kartu Fasilitas (Teks Mengisi 477px) -->
+                            <div class="f-card" style="width: 495px; height: 477px; padding: 25px;">
                                 <div>
                                     <div class="c-sub" style="font-size: 18px; margin-bottom: 12px; margin-top: 0;">✨ Fasilitas Utama</div>
                                     <ul>
@@ -273,48 +256,48 @@
                             </div>
                         </div>
 
-                        <!-- Kolom Kanan: Lebar 490px -->
-                        <div style="width: 490px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <!-- Kolom Kanan -->
+                        <div style="width: 495px; height: 850px; display: flex; flex-direction: column; justify-content: space-between;">
                             
-                            <!-- Kartu Harga (670px) -->
-                            <div class="f-card" style="height: 670px; padding: 30px;">
-                                <div class="f-badge" style="font-size: 16px; top:-16px; right: 20px; padding: 8px 20px;">🔥 SISA 3 KAMAR!</div>
-                                <div class="c-title" style="font-size: 24px; padding-bottom: 12px;">💰 Daftar Harga</div>
+                            <!-- Kartu Harga (Teks Mengisi 490px) -->
+                            <div class="f-card" style="width: 495px; height: 490px; padding: 25px 30px;">
+                                <div class="f-badge" style="font-size: 16px; top:-16px; right: 20px; padding: 6px 20px;">🔥 SISA 3 KAMAR!</div>
+                                <div class="c-title" style="font-size: 22px; padding-bottom: 10px;">💰 Daftar Harga</div>
                                 
-                                <div class="c-sub" style="font-size: 18px;">⬇️ LANTAI BAWAH</div>
-                                <div class="p-row" style="padding-bottom: 10px;"><span style="font-size: 18px;">Kamar Lengkap*</span><span class="p-val" style="font-size: 22px;">Rp 700rb</span></div>
-                                <div class="p-row" style="padding-bottom: 10px;"><span style="font-size: 18px;">Kamar Kosongan</span><span class="p-val" style="font-size: 22px;">Rp 600rb</span></div>
+                                <div class="c-sub" style="font-size: 17px;">⬇️ LANTAI BAWAH</div>
+                                <div class="p-row" style="padding-bottom: 8px;"><span style="font-size: 17px;">Kamar Lengkap*</span><span class="p-val" style="font-size: 20px;">Rp 700rb</span></div>
+                                <div class="p-row" style="padding-bottom: 8px;"><span style="font-size: 17px;">Kamar Kosongan</span><span class="p-val" style="font-size: 20px;">Rp 600rb</span></div>
                                 
-                                <div class="c-sub" style="font-size: 18px; margin-top: 10px;">⬆️ LANTAI ATAS</div>
-                                <div class="p-row" style="padding-bottom: 10px; border-bottom: none;"><span style="font-size: 18px;">Kosongan + K.M Dalam*</span><span class="p-val" style="font-size: 22px;">Rp 700rb</span></div>
+                                <div class="c-sub" style="font-size: 17px; margin-top: 10px;">⬆️ LANTAI ATAS</div>
+                                <div class="p-row" style="padding-bottom: 8px; border-bottom: none;"><span style="font-size: 17px;">Kosongan + K.M Dalam*</span><span class="p-val" style="font-size: 20px;">Rp 700rb</span></div>
 
-                                <div class="p-note" style="font-size: 14px; padding: 12px; margin-top: 5px;">
+                                <div class="p-note" style="font-size: 13px; padding: 10px; margin-top: 5px;">
                                     <b>*Catatan Penting:</b><br>
                                     Lengkap = Include Kasur, Kipas, Lemari.<br>
                                     Listrik lt.bawah = ditanggung pemilik.<br>
                                     Listrik lt.atas = token mandiri.
                                 </div>
-                                <div class="f-promo" style="padding: 15px; font-size: 17px;">👯‍♀️ Bisa Patungan! (+ Rp 200rb/bln)</div>
+                                <div class="f-promo" style="padding: 12px; font-size: 16px;">👯‍♀️ Bisa Patungan! (+ Rp 200rb/bln)</div>
                             </div>
 
-                            <!-- Baris QR Kiri Kanan (160px) -->
-                            <div style="height: 160px; display: flex; justify-content: space-between;">
+                            <!-- Baris QR Kiri Kanan -->
+                            <div style="width: 495px; height: 160px; display: flex; justify-content: space-between;">
                                 <!-- QR Maps -->
-                                <div class="f-card" style="width: 235px; flex-direction: row; align-items: center; padding: 15px; gap: 15px;">
+                                <div class="f-card" style="width: 237px; height: 160px; flex-direction: row; align-items: center; padding: 0 15px; gap: 15px;">
                                     <div class="f-qr-box" style="width: 85px; border: 1px solid var(--secondary); padding: 4px;">
                                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Gx7gHEeugVkciWht6&color=880e4f" alt="Maps">
                                     </div>
                                     <div>
-                                        <h3 style="font-size: 15px; color: var(--primary-dark); line-height: 1.2;">Alamat/Maps</h3>
+                                        <h3 style="font-size: 14px; color: var(--primary-dark); line-height: 1.2;">Alamat/Maps</h3>
                                         <p style="font-size: 12px; margin-top: 4px; color: var(--primary); font-weight: 700;">📍 SCAN KIRI</p>
                                     </div>
                                 </div>
                                 
                                 <!-- QR WA -->
-                                <div style="width: 235px; background: var(--primary-dark); border-radius: 16px; padding: 15px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
+                                <div style="width: 237px; height: 160px; background: var(--primary-dark); border-radius: 16px; padding: 0 15px; display: flex; flex-direction: row; align-items: center; justify-content: space-between; box-shadow: 0 8px 15px rgba(0,0,0,0.1);">
                                     <div style="text-align: right; flex: 1; padding-right: 12px;">
-                                        <p style="font-size: 14px; color: var(--secondary); margin-bottom: 2px;">Chat WA:</p>
-                                        <h3 style="font-size: 18px; color: var(--white); line-height: 1.1;">0852-6290-4213</h3>
+                                        <p style="font-size: 13px; color: var(--secondary); margin-bottom: 2px;">Chat WA:</p>
+                                        <h3 style="font-size: 17px; color: var(--white); line-height: 1.1;">0852-6290-4213</h3>
                                     </div>
                                     <div class="f-qr-box" style="width: 85px; padding: 5px;">
                                         <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://wa.me/6285262904213&color=25D366" alt="WA">
@@ -328,14 +311,13 @@
             </div>
         </div>
 
-
-        <!-- ==================== FLYER 3: STORY (1080 x 1920) ==================== -->
+        <!-- ==================== FLYER 3: STORY (1080x1920) ==================== -->
         <div class="flyer-section">
             <h2>3. Orientasi Vertikal Penuh (Rasio 9:16) – 1080 x 1920 pixel</h2>
             <div class="scale-wrapper-3">
                 <div class="scale-content-3 f-canvas" style="width: 1080px; height: 1920px; padding: 45px;">
                     
-                    <!-- Header: 150px -->
+                    <!-- Header -->
                     <div class="f-header" style="height: 150px; padding: 0 45px;">
                         <div class="f-header-left">
                             <h1 style="font-size: 56px;">KOST IBU RAHMI</h1>
@@ -347,54 +329,54 @@
                         </div>
                     </div>
 
-                    <!-- Area Bawah: 1650px (1920 - 90(pad) - 150(hdr) - 30(gap)) -->
-                    <div style="height: 1650px; margin-top: 30px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <!-- Area Konten (1645px Total Height) -->
+                    <div style="height: 1645px; margin-top: 35px; display: flex; flex-direction: column; justify-content: space-between;">
                         
-                        <!-- Blok 1: Foto (600px) -->
-                        <div style="height: 600px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div class="img-wrap" style="width: 100%; height: 370px;"><img src="1-tampak-depan.webp" alt="Depan"></div>
-                            <div style="display: flex; justify-content: space-between; height: 210px;">
-                                <div class="img-wrap" style="width: 315px;"><img src="kamar-baru.jpeg" alt="Kamar 1"></div>
-                                <div class="img-wrap" style="width: 315px;"><img src="lobi-baru.jpeg" alt="Lobi"></div>
-                                <div class="img-wrap" style="width: 315px;"><img src="kamar-lantai-2.webp" alt="Kamar 2" style="object-position: center;"></div>
+                        <!-- Blok 1: Foto (Presisi Rasio Asli Total 696px) -->
+                        <div style="width: 990px; height: 696px; display: flex; flex-direction: column; justify-content: space-between;">
+                            <div class="img-wrap" style="width: 990px; height: 434px;"><img src="1-tampak-depan.webp" alt="Depan"></div>
+                            <div style="display: flex; justify-content: space-between; width: 990px; height: 237px;">
+                                <div class="img-wrap" style="width: 316px; height: 237px;"><img src="kamar-baru.jpeg" alt="Kamar 1"></div>
+                                <div class="img-wrap" style="width: 316px; height: 237px;"><img src="lobi-baru.jpeg" alt="Lobi"></div>
+                                <div class="img-wrap" style="width: 316px; height: 237px;"><img src="kamar-lantai-2.webp" alt="Kamar 2"></div>
                             </div>
                         </div>
 
-                        <!-- Blok 2: Alamat & QR Maps (175px) -->
-                        <div class="f-card" style="height: 175px; flex-direction: row; align-items: center; padding: 25px 35px; gap: 30px;">
-                            <div class="f-qr-box" style="width: 110px; border: 1px solid var(--secondary); padding: 5px;">
+                        <!-- Blok 2: Alamat (140px) -->
+                        <div class="f-card" style="width: 990px; height: 140px; flex-direction: row; align-items: center; padding: 0 35px; gap: 30px;">
+                            <div class="f-qr-box" style="width: 100px; border: 1px solid var(--secondary); padding: 5px;">
                                 <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://maps.app.goo.gl/Gx7gHEeugVkciWht6&color=880e4f" alt="Maps">
-                                <p style="color: var(--primary); font-size: 13px; margin-top: 3px;">📍 SCAN MAPS</p>
+                                <p style="color: var(--primary); font-size: 12px; margin-top: 2px;">📍 SCAN MAPS</p>
                             </div>
                             <div style="flex: 1;">
-                                <h3 style="color:var(--primary-dark); font-size: 24px; margin-bottom: 10px;">Alamat Lengkap Kost:</h3>
-                                <div class="p-note" style="background: #fff5f7; padding: 15px 20px; font-size: 19px; font-weight: 600; color: var(--text-dark);">
+                                <h3 style="color:var(--primary-dark); font-size: 22px; margin-bottom: 8px;">Alamat Lengkap Kost:</h3>
+                                <div class="p-note" style="background: #fff5f7; padding: 12px 20px; font-size: 18px; font-weight: 600; color: var(--text-dark);">
                                     Jl. M. Hatta, Anduring, Gang Sakinah No. 59, Kota Padang
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Blok 3: Fasilitas (275px) -->
-                        <div class="f-card" style="height: 275px; padding: 25px 40px;">
+                        <!-- Blok 3: Fasilitas (230px) -->
+                        <div class="f-card" style="width: 990px; height: 230px; padding: 25px 40px;">
                             <div class="c-title" style="font-size: 24px; padding-bottom: 12px;">✨ Keunggulan & Fasilitas</div>
                             <div style="display: flex; justify-content: space-between; margin-top: 15px;">
                                 <ul style="width: 48%;">
-                                    <li style="font-size: 18px; margin-bottom: 10px; padding-left: 32px;"><b>Kamar Super Luas (4x4m)</b></li>
-                                    <li style="font-size: 18px; margin-bottom: 10px; padding-left: 32px;"><b>FREE Akses Wi-Fi 24 Jam</b></li>
-                                    <li style="font-size: 18px; margin-bottom: 10px; padding-left: 32px;"><b>Gratis Kuota Air Bersih</b></li>
+                                    <li style="font-size: 18px; margin-bottom: 8px; padding-left: 32px;"><b>Kamar Super Luas (4x4m)</b></li>
+                                    <li style="font-size: 18px; margin-bottom: 8px; padding-left: 32px;"><b>FREE Akses Wi-Fi 24 Jam</b></li>
+                                    <li style="font-size: 18px; margin-bottom: 8px; padding-left: 32px;"><b>Gratis Kuota Air Bersih</b></li>
                                     <li style="font-size: 18px; padding-left: 32px;"><b>Parkir Motor Dalam Pagar</b></li>
                                 </ul>
                                 <ul style="width: 48%;">
-                                    <li style="font-size: 18px; margin-bottom: 10px; padding-left: 32px; color: var(--primary-dark); font-weight: 700;">Akses Strategis Terdekat:</li>
-                                    <li style="font-size: 18px; margin-bottom: 10px; padding-left: 32px;">Univ. Dharma Andalas (± 7 Mnt)</li>
-                                    <li style="font-size: 18px; margin-bottom: 10px; padding-left: 32px;">Basko City Mall (± 10 Menit)</li>
-                                    <li style="font-size: 18px; padding-left: 32px;">RS Semen Padang / SPH (± 10 Mnt)</li>
+                                    <li style="font-size: 18px; margin-bottom: 8px; padding-left: 32px; color: var(--primary-dark); font-weight: 700;">Akses Strategis Terdekat:</li>
+                                    <li style="font-size: 18px; margin-bottom: 8px; padding-left: 32px;">Univ. Dharma Andalas (± 7 Mnt) / Basko Mall (± 10 Mnt)</li>
+                                    <li style="font-size: 18px; margin-bottom: 8px; padding-left: 32px;">RS Semen Padang / SPH (± 10 Mnt)</li>
+                                    <li style="font-size: 18px; padding-left: 32px;">Pusat Kota / Pasar Raya (± 15 Mnt)</li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- Blok 4: Harga (350px) -->
-                        <div class="f-card" style="height: 350px; padding: 30px 40px;">
+                        <!-- Blok 4: Harga (309px) -->
+                        <div class="f-card" style="width: 990px; height: 309px; padding: 25px 40px;">
                             <div class="f-badge" style="font-size: 18px; top:-20px; right: 40px; padding: 8px 30px;">🔥 SISA 3 KAMAR!</div>
                             <div class="c-title" style="font-size: 26px; padding-bottom: 12px; margin-bottom: 5px;">💰 Tarif Sewa Kost</div>
                             
@@ -411,16 +393,16 @@
                                     </div>
                                 </div>
                                 <div style="width: 38%; display: flex; flex-direction: column; justify-content: space-between;">
-                                    <div class="p-note" style="font-size: 14px; padding: 15px; border-left: 5px solid var(--primary);">
+                                    <div class="p-note" style="font-size: 14px; padding: 12px; border-left: 5px solid var(--primary);">
                                         <b>*Catatan:</b> Kamar Lengkap (Kasur, Kipas, Lemari). Listrik lt.bawah (pemilik), lt.atas (token sendiri).
                                     </div>
-                                    <div class="f-promo" style="padding: 15px; font-size: 19px;">👯‍♀️ Patungan +200rb/bln</div>
+                                    <div class="f-promo" style="padding: 12px; font-size: 19px;">👯‍♀️ Patungan +200rb/bln</div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Blok 5: Kontak & QR WA (150px) -->
-                        <div style="height: 150px; background: linear-gradient(135deg, var(--primary-dark), #560430); border-radius: 16px; padding: 0 45px; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="width: 990px; height: 150px; background: linear-gradient(135deg, var(--primary-dark), #560430); border-radius: 16px; padding: 0 45px; display: flex; justify-content: space-between; align-items: center;">
                             <div>
                                 <h4 style="font-size: 20px; color: var(--secondary); margin-bottom: 5px; font-weight: 500;">Tanya Jawab / Booking Via WA:</h4>
                                 <div style="font-size: 42px; font-weight: 800; color: var(--white); line-height: 1.1;">0852-6290-4213</div>
