@@ -8,7 +8,7 @@
     <link rel="preload" as="image" href="1-tampak-depan.webp">
 
     <meta property="og:title" content="Kost Ibu Rahmi - Hunian Putri Muslimah Anduring" />
-    <meta property="og:description" content="Kost putri nyaman, luas 4x4m, Free Wi-Fi, dan strategis di Anduring. Sisa 3 kamar kosong! Klik untuk lihat foto dan fasilitas." />
+    <meta property="og:description" content="Kost putri nyaman, luas 4x4m, Free Wi-Fi, dan strategis di Anduring. Saat ini kamar PENUH (Tersedia kembali akhir Juni). Klik untuk lihat foto dan fasilitas." />
     <meta property="og:url" content="https://kostiburahmi.pages.dev/" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -88,28 +88,32 @@
             opacity: 0.8;
         }
 
-        /* Badge Sisa Kamar (Berada di atas Header) */
+        /* Badge Status Kamar (Berada di atas Header) */
         .badge-wrapper {
             position: absolute;
-            top: -15px;
+            top: -20px;
             right: 20px;
             z-index: 10;
         }
         .badge-sisa {
-            background: #fca311;
-            color: #5c3a00;
-            padding: 6px 18px;
+            background: #ef4444; /* Warna Merah untuk status penuh */
+            color: #ffffff;
+            padding: 8px 20px;
             border-radius: 20px;
             font-weight: 800;
-            font-size: 0.85rem;
-            box-shadow: 0 4px 10px rgba(252, 163, 17, 0.4);
-            animation: pulse 2s infinite;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
             display: inline-block;
+            text-align: center;
+            line-height: 1.2;
+            border: 2px solid #ffffff;
         }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
+        .badge-sisa span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #fecaca;
+            margin-top: 2px;
         }
 
         h2 { 
@@ -288,7 +292,7 @@
             .hero { height: 200px; }
             .header-box h1 { font-size: 1.8rem; }
             .header-box p { font-size: 0.85rem; }
-            .badge-wrapper { right: 10px; }
+            .badge-wrapper { right: 10px; top: -10px; }
             th, td { padding: 10px 5px; font-size: 0.85rem; }
             .price { font-size: 0.9rem; }
         }
@@ -299,11 +303,14 @@
 <div class="main-content">
     <div class="container">
         
-        <!-- HEADER MINIMALIS DENGAN BADGE (Sekarang Sejajar 100%) -->
+        <!-- HEADER MINIMALIS DENGAN BADGE STATUS -->
         <header>
             <div class="header-box">
                 <div class="badge-wrapper">
-                    <div class="badge-sisa">🔥 SISA 3 KAMAR!</div>
+                    <div class="badge-sisa">
+                        ⛔ KAMAR PENUH
+                        <span>Tersedia Kembali Akhir Juni</span>
+                    </div>
                 </div>
                 <h1>KOST IBU RAHMI</h1>
                 <p>Hunian Putri Khusus Muslimah • Bersih, Nyaman & Strategis</p>
@@ -399,7 +406,7 @@
         </div>
         
         <div class="cta-container">
-            <a href="https://wa.me/6285262904213?text=Halo%20Ibu%20Rahmi,%20saya%20lihat%20website%20kost%20dan%20tertarik%20tanya-tanya%20kamar." class="btn-wa">
+            <a href="https://wa.me/6285262904213?text=Halo%20Ibu%20Rahmi,%20saya%20lihat%20website%20kost%20dan%20tertarik%20booking%20kamar%20untuk%20akhir%20Juni." class="btn-wa">
                 <i data-lucide="message-circle" style="width: 20px; height: 20px;"></i>
                 Chat WhatsApp: 0852-6290-4213
             </a>
