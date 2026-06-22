@@ -53,13 +53,20 @@
         h2 { color: var(--primary-dark); font-size: 1.3rem; margin: 0 0 15px 0; display: flex; align-items: center; gap: 8px; }
         h2::before { content: ''; display: inline-block; width: 5px; height: 20px; background-color: var(--primary); border-radius: 4px; }
 
-        .card { background: var(--white); padding: 20px; border-radius: var(--radius); margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.04); width: 100%; }
+        .card { background: var(--white); padding: 25px; border-radius: var(--radius); margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.04); width: 100%; }
         .grid-2-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
         .grid-2-col .card { margin-bottom: 0; }
 
         .hero { width: 100%; height: 350px; border-radius: var(--radius); overflow: hidden; margin-bottom: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.06); }
         .hero img { width: 100%; height: 100%; object-fit: cover; }
         
+        /* Desain Video Baru (UI Phone Frame) */
+        .video-card { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 30px; }
+        .video-info { flex: 1; }
+        .video-info p { color: var(--text-light); font-size: 1rem; margin-top: 8px; line-height: 1.6; }
+        .video-phone-frame { width: 100%; max-width: 260px; aspect-ratio: 9 / 16; background-color: #000; border-radius: 20px; overflow: hidden; box-shadow: 0 15px 35px rgba(0,0,0,0.15); border: 6px solid #e2e8f0; flex-shrink: 0; margin: 0 auto; position: relative; }
+        .video-phone-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
         .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; align-items: start; }
         .gallery-item { border-radius: 12px; overflow: hidden; background: #fff; cursor: pointer; position: relative; box-shadow: 0 4px 8px rgba(0,0,0,0.04); }
         .gallery-item img { width: 100%; height: auto; transition: transform 0.4s ease; display: block; }
@@ -107,6 +114,8 @@
             .badge-wrapper { right: 10px; top: -15px; }
             th, td { padding: 10px 5px; font-size: 0.85rem; }
             .price { font-size: 0.9rem; }
+            .video-card { flex-direction: column; text-align: center; }
+            .video-info h2 { justify-content: center; }
         }
     </style>
 </head>
@@ -131,11 +140,15 @@
 
         <div class="hero"><img src="1-tampak-depan.webp" alt="Tampak Depan" loading="eager"></div>
 
-        <!-- Virtual Tour Video Portrait -->
-        <div class="video-wrapper">
-            <h3><i data-lucide="play-circle" style="color: #f48fb1; width: 20px; height: 20px;"></i> Intip Kondisi Dalam Kost</h3>
-            <div class="video-container">
-                <video controls preload="metadata" poster="1-tampak-depan.webp">
+        <!-- Video Tour dengan Desain Phone Frame Baru -->
+        <div class="card video-card">
+            <div class="video-info">
+                <h2><i data-lucide="video" style="color: var(--primary); width: 24px; height: 24px;"></i> Intip Suasana Lobi</h2>
+                <p>Lihat langsung suasana tenang, bersih, dan nyamannya area lobi serta koridor dalam Kost Ibu Rahmi melalui cuplikan video singkat di samping ini.</p>
+            </div>
+            <div class="video-phone-frame">
+                <!-- Atribut poster="1-tampak-depan.webp" dihapus agar video tidak letterbox -->
+                <video controls preload="metadata">
                     <source src="https://raw.githubusercontent.com/newbieot/kostiburahmi/main/video-portrait.mp4" type="video/mp4">
                     Maaf, browser Anda tidak mendukung pemutar video.
                 </video>
@@ -196,13 +209,13 @@
                     <tbody>
                         <!-- Kamar VIP Baru -->
                         <tr style="background-color: #fff1f2;">
-                            <td><strong>VIP - Lantai 1 (Baru)</strong><br><small style="color:#e11d48; font-weight:bold;">Sisa 1 (Masuk 01 Juli)</small></td>
+                            <td><strong>VIP - Lantai 1 (Baru)</strong><br><small style="color:#e11d48; font-weight:bold;">Sisa 1 (Masuk 01 Juli 2026)</small></td>
                             <td>AC Inverter, KM Dalam, Queen Bed Set, Lemari, Meja.</td>
                             <td class="price" style="color: #e11d48;">Rp 1.500.000</td>
                         </tr>
                         <!-- Standar Tersedia 28 Juni -->
                         <tr style="background-color: #fffbeb;">
-                            <td><strong>Standar - Lantai Bawah</strong><br><small style="color:#ea580c; font-weight:bold;">Sisa 1 (Masuk 28 Juni)</small></td>
+                            <td><strong>Standar - Lantai Bawah</strong><br><small style="color:#ea580c; font-weight:bold;">Sisa 1 (Masuk 28 Juni 2026)</small></td>
                             <td>Kamar Lengkap (Kasur, Kipas, Lemari)</td>
                             <td class="price">Rp 700.000</td>
                         </tr>
