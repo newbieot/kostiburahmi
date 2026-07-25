@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://kostiburahmi.pages.dev/</loc>
-    <lastmod>2026-05-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://kost.posnew.com/</loc>
+    <lastmod>2026-07-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image><image:loc>https://kost.posnew.com/assets/images/kamar-vip-baru-tempat-tidur-1280.webp</image:loc><image:title>Kamar VIP baru Kost Ibu Rahmi</image:title><image:caption>Kamar VIP putri Muslimah di Anduring Padang</image:caption></image:image>
+    <image:image><image:loc>https://kost.posnew.com/assets/images/kost-ibu-rahmi-tampak-depan-1280.webp</image:loc><image:title>Tampak depan Kost Ibu Rahmi</image:title></image:image>
+    <image:image><image:loc>https://kost.posnew.com/assets/images/kamar-vip-kamar-mandi-dalam-1280.webp</image:loc><image:title>Kamar mandi dalam kamar VIP</image:title></image:image>
+    <image:image><image:loc>https://kost.posnew.com/assets/images/lobi-kost-ibu-rahmi-1280.webp</image:loc><image:title>Lobi Kost Ibu Rahmi</image:title></image:image>
   </url>
 </urlset>

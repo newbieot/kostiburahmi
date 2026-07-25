@@ -1,3 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://kostiburahmi.pages.dev/sitemap.xml
+Disallow: /flyer
+Disallow: /flyer-story
+Sitemap: https://kost.posnew.com/sitemap.xml
