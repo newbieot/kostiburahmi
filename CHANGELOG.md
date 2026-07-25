@@ -1,5 +1,9 @@
 # Changelog
 
+## 2026-07-25 — Copy refinement
+- Removed internal/technical gallery wording from the public page.
+- Rewrote the VIP room, video-tour, and gallery introductions as customer-facing marketing copy.
+
 ## 2026-07-25
 
 - Redesign penuh UI/UX dengan gaya premium putih, abu-abu, navy dan aksen emas.
