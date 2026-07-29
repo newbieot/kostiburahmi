@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /flyer
-Disallow: /flyer-story
+
 Sitemap: https://kost.posnew.com/sitemap.xml
