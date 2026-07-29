@@ -1,3 +1,11 @@
+## 2026-07-29
+
+- Status terbaru: 1 kamar standar dan 1 kamar VIP tersedia.
+- Harga kamar standar: Rp600.000 tanpa isi atau Rp750.000 dengan lemari, kasur, dan kipas angin.
+- Wi-Fi dan air tersedia; listrik kamar standar termasuk khusus lampu dan kipas angin.
+- Harga kamar VIP tetap Rp1.700.000 per bulan.
+- SEO, structured data, WhatsApp CTA, FAQ, dan sitemap diperbarui.
+
 # Changelog
 
 ## 2026-07-25 — Copy refinement

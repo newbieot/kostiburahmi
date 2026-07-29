@@ -1,6 +1,6 @@
 # Kost Ibu Rahmi — kost.posnew.com
 
-Website statis untuk mempromosikan Kost Putri Muslimah Ibu Rahmi di Anduring, Padang.
+Website statis untuk mempromosikan Kost Putri Muslimah Ibu Rahmi di Anduring, Padang, dengan pilihan kamar standar dan VIP.
 
 ## Deploy
 
