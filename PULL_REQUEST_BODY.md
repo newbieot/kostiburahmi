@@ -16,5 +16,5 @@
 - [x] Tidak ada page error atau console error pada render lokal
 - [x] JavaScript lolos `node --check`
 - [x] Flyer tepat 1080 × 1350
-- [x] QR WhatsApp berhasil didecode dari screenshot final: `https://wa.me/6285262904213`
+- [x] QR WhatsApp berhasil didecode dari screenshot final: `https://wa.me/6282160600763`
 - [x] QR Google Maps berhasil didecode dari screenshot final: `https://maps.app.goo.gl/Gx7gHEeugVkciWht6`

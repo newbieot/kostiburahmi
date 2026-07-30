@@ -8,7 +8,7 @@ Paket ini berisi file yang perlu menggantikan file dengan path sama pada reposit
 - `flyer.html` — flyer digital tetap 1080 × 1350 dengan foto VIP asli dan dua QR terpisah.
 - `assets/css/site.css` — desain responsif navy/cream/emas/hijau, grid galeri teratur, focus state, reduced motion.
 - `assets/js/site.js` — navigasi mobile dan lightbox ringan.
-- `assets/images/qr-whatsapp.png` — QR programatis untuk URL persis `https://wa.me/6285262904213`.
+- `assets/images/qr-whatsapp.png` — QR programatis untuk URL persis `https://wa.me/6282160600763`.
 - `assets/images/qr-google-maps.png` — QR programatis untuk URL persis `https://maps.app.goo.gl/Gx7gHEeugVkciWht6`.
 - `robots.txt` dan `sitemap.xml` — SEO crawling dan internal URL yang diperbarui.
 
